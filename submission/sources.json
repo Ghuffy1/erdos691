@@ -1,0 +1,50 @@
+[
+  {
+    "role": "original_problem",
+    "url": "https://www.erdosproblems.com/691",
+    "identifier": "Erdos 691"
+  },
+  {
+    "role": "primary_problem_source",
+    "url": "https://www.numdam.org/article/AST_1979__61__73_0.pdf",
+    "title": "Some unconventional problems in number theory",
+    "author": "P. Erdos",
+    "year": 1979,
+    "pages": "73-82",
+    "problem_page": 77,
+    "captured_sha256": "50102c8dd9107825383da9162ed9de4aeeb01aefa40ee8e4084f11e5a0686a9a"
+  },
+  {
+    "role": "classical_theorem",
+    "url": "https://renyi.hu/~p_erdos/1936-04.pdf",
+    "title": "On sequences of positive integers",
+    "authors": [
+      "H. Davenport",
+      "P. Erdos"
+    ],
+    "year": 1936,
+    "pages": "147-151",
+    "captured_sha256": "8e2a86de7f0867114b36c915da9657bb02bfff58ffd964da6090c65c866bc8e2"
+  },
+  {
+    "role": "upstream_formal_code",
+    "url": "https://github.com/yuta0x89/ErdosProblems/blob/1aa94199fd3874e25b2126a0ff153e144e3e9c04/Erdos691.lean",
+    "commit": "1aa94199fd3874e25b2126a0ff153e144e3e9c04",
+    "license_basis": "Embedded Apache 2.0 notice at source lines 859-863; preserved and accompanied by full license and modification notice"
+  },
+  {
+    "role": "rules",
+    "url": "https://github.com/TheJustinSunPrize/awards/tree/f8801a856529dce27e738c6b305e46d76e7c387c",
+    "commit": "f8801a856529dce27e738c6b305e46d76e7c387c"
+  },
+  {
+    "role": "selection_rules",
+    "url": "https://www.hejustinsun.com/prize/rules",
+    "reviewed": "2026-11-11"
+  },
+  {
+    "role": "claim_guidance",
+    "url": "https://www.hejustinsun.com/prize/claim",
+    "reviewed": "2026-11-11"
+  }
+]

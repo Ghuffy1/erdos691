@@ -1,0 +1,25 @@
+Erdos 691 / JSP-000563
+A divisor-closed criterion for Behrend sequences
+
+Equal team contributors
+Will Howe (H0W4RD-dev)
+Grant Huffman (Ghuffy1)
+Jensen Kohlmeyer (JENW1N)
+Liam Kruer (lkruer)
+
+The classical Davenport-Erdos dependency is adapted from yuta0x89/ErdosProblems,
+commit 1aa94199fd3874e25b2126a0ff153e144e3e9c04, Erdos691.lean.
+Its embedded notice, retained in the formal source, reads
+
+Copyright (c) 2026.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: OpenAI ChatGPT
+
+The source was adapted by selecting the required classical theorem, narrowing
+imports, and repairing elaboration for the pinned Lean and Mathlib versions.
+The adaptive criterion, probability construction and statement bridges were
+added for this project. Original notices remain in the source. The full Apache
+2.0 license is included in LICENSE and third-party/APACHE-2.0.txt.
+
+OpenAI AI tools assisted the mathematical exploration, formalization,
+verification, manuscript and submission preparation.

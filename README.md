@@ -2,7 +2,7 @@
 
 Private preparation of the combined mathematical and Lean submission for **Erdős problem 691 / JSP-000563**.
 
-The intended GitHub owner and submission coordinator is **Ghuffy1**. Will Howe (**H0W4RD-dev**), Grant Huffman (**Ghuffy1**), Jensen Kohlmeyer (**JENW1N**), and Liam Kruer (**lkruer**) receive equal team contribution credit. The paper uses alphabetical surname order. AI assistance and the separately credited classical formalization are documented in [AUTHORS.md](AUTHORS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The GitHub owner and submission coordinator is **Ghuffy1**. Will Howe (**H0W4RD-dev**), Grant Huffman (**Ghuffy1**), Jensen Kohlmeyer (**JENW1N**), and Liam Kruer (**lkruer**) receive equal team contribution credit. The paper uses alphabetical surname order. AI assistance and the separately credited classical formalization are documented in [AUTHORS.md](AUTHORS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Mathematical result
 
@@ -30,4 +30,4 @@ For individual commands and trust boundaries, read [submission/REPRODUCTION.md](
 
 The [readiness audit](submission/READINESS.md) records completed checks and outstanding release conditions. The [PR draft](submission/PR_BODY.md) and catalog patch are prepared for the standard GitHub route. They target the existing JSP-000563 entry. Repository ownership, public links, contributor identity, source rights, priority, and the organizers' review must be established at the appropriate submission stage.
 
-This local repository has no configured remote. Publication remains subject to the user's release instruction. The proposed remote name is `Ghuffy1/erdos691`.
+The original repository is **Ghuffy1/erdos691**, created with private visibility. Public release remains subject to the user's instruction.

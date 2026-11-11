@@ -3,7 +3,21 @@ name: Verify complete proof
 on:
   workflow_dispatch:
   push:
+    paths:
+      - '**.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'scripts/**'
+      - '.github/workflows/verify.yml'
   pull_request:
+    paths:
+      - '**.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'scripts/**'
+      - '.github/workflows/verify.yml'
 
 permissions:
   contents: read
@@ -14,7 +28,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Check out the submitted commit
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
       - name: Install pinned Elan
@@ -38,3 +52,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/verify.py --expect-commit "$(git rev-parse HEAD)" --fresh
+      - name: Retain the private verification evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: proof-verification
+          path: .audit/
+          include-hidden-files: true

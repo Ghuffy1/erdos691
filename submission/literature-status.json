@@ -1,0 +1,24 @@
+{
+  "novelty": "unestablished",
+  "priority": "unestablished",
+  "missing_full_texts": [
+    {
+      "work": "Hall, Sets of Multiples (1996), sections 1.3 and 1.4",
+      "pages": "36-65",
+      "url": "https://doi.org/10.1017/CBO9780511566011.005",
+      "status": "Bibliographic record and section ranges verified, full text inaccessible"
+    },
+    {
+      "work": "Hall, Sets of multiples of Behrend sequences (1990)",
+      "pages": "249-258",
+      "url": "https://doi.org/10.1017/CBO9780511983917.018",
+      "status": "Bibliographic record and title alias verified, full text inaccessible"
+    },
+    {
+      "work": "Hill, Uniform Distribution, Behrend Sequences, and Some Spaces of Arithmetic Functions (2000)",
+      "pages": null,
+      "url": "https://www.ideals.illinois.edu/items/88281",
+      "status": "Repository record and abstract read, full dissertation inaccessible"
+    }
+  ]
+}

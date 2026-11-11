@@ -1,0 +1,25 @@
+{
+  "prior_private_commit": "9b6ce1846df5d6d1fa9fc428388735ca9da9c6bd",
+  "submitted_proof_commit": "87514692c7a814ea3f500eb72bfba45da8a2bf54",
+  "change": "CRLF normalized to LF by Git; formal proof text unchanged",
+  "files": [
+    {
+      "path": "Erdos691.lean",
+      "current_sha256": "2a1ebd41e7b532deae42ee0f27e5c9d93dd9b04a2bb554a16f7e1d8b8865718d",
+      "previous_sha256": "8c22c535fa2d987a60c28454a412c21568e305051ac5acf6104ee4d9525f62d6",
+      "same_after_crlf_normalization": true
+    },
+    {
+      "path": "Challenge.lean",
+      "current_sha256": "a483ee64b46a5934bb766aedc601091350d1bac0a1d679cf088679e7d2cc22d4",
+      "previous_sha256": "a483ee64b46a5934bb766aedc601091350d1bac0a1d679cf088679e7d2cc22d4",
+      "same_after_crlf_normalization": true
+    },
+    {
+      "path": "Audit.lean",
+      "current_sha256": "70c31311d33c9a9a7c2cd92ae05d112b58eb239a79238aa0da6d4420542b46bf",
+      "previous_sha256": "70c31311d33c9a9a7c2cd92ae05d112b58eb239a79238aa0da6d4420542b46bf",
+      "same_after_crlf_normalization": true
+    }
+  ]
+}

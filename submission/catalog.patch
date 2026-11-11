@@ -1,0 +1,22 @@
+--- a/problems/catalog-0501-0600.md
++++ b/problems/catalog-0501-0600.md
+@@ -1069,12 +1069,13 @@
+ | Date proposed | No later than 1979 (bibliographic evidence) |
+ | Mathematical area | Number theory |
+ | Problem description | What conditions on an integer set are equivalent to its multiples having density one? |
+-| Current status | Open |
+-| Lean proof | No |
+-| Eligible to claim | No |
+-| Historical bounty |  |
+-| Elapsed years | About 47 years (since 1979) |
+-| Publication details |  |
++| Current status | Solved<br>Proof contributors: Will Howe, Grant Huffman, Jensen Kohlmeyer, et al. (four equal contributors, fully listed in the linked authorship record). |
++| Lean proof | Yes — [Original proof repository](https://github.com/Ghuffy1/erdos691), branch `main`, commit `87514692c7a814ea3f500eb72bfba45da8a2bf54`, [Erdos691.lean](https://github.com/Ghuffy1/erdos691/blob/87514692c7a814ea3f500eb72bfba45da8a2bf54/Erdos691.lean#L5748), theorem `Erdos691.Adaptive.erdos691`. <br>Formalization contributors: H0W4RD-dev, Ghuffy1, JENW1N, et al. (four equal contributors). AI assistance and the classical dependency are credited in the linked source record. |
++| Eligible to claim | No |
++| Historical bounty |  |
++| Elapsed years | About 47 years (since 1979) |
++| Attribution basis | [Authorship record](https://github.com/Ghuffy1/erdos691/blob/87514692c7a814ea3f500eb72bfba45da8a2bf54/AUTHORS.md) and [source credits](https://github.com/Ghuffy1/erdos691/blob/87514692c7a814ea3f500eb72bfba45da8a2bf54/THIRD_PARTY_NOTICES.md). Mathematical and formal contribution evidence requires maintainer review. |
++| Publication details | [A divisor-closed criterion for Behrend sequences](https://github.com/Ghuffy1/erdos691/blob/87514692c7a814ea3f500eb72bfba45da8a2bf54/paper/proof.pdf), November 11, 2026, Theorem 1.1, Definition 1.2, and pp. 3–6. Proposed complete structural criterion. Novelty and priority remain subject to review. |
+ | Scholarly recognition |  |
+ 
+ <a id="JSP-000564"></a>

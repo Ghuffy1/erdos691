@@ -21,7 +21,7 @@ JSP-000563 is outside the 50-problem MathDB pilot. Its applicable route is the s
 | Disclose all proof assumptions | Standard Lean foundations are listed for every audited declaration. Verification records identify the achieved checking levels. |
 | Separate solver and formalizer attribution | `AUTHORS.md`, `THIRD_PARTY_NOTICES.md`, and the two attribution fields in the PR draft. |
 | AI disclosure | Manuscript acknowledgment, `AUTHORS.md`, and PR attribution. |
-| Respect third-party rights | Existing classical source credited. Its redistribution permission remains unresolved and is a release condition. |
+| Respect third-party rights | Embedded Apache 2.0 source notice preserved, full license and modification NOTICE included. The file-level declaration is the recorded licensing basis. |
 | Check overlapping submissions | `RELATED_WORK.md` records the searches and four related closed PRs, with the limits of the inspection. |
 | Permitted awards changes | `catalog.patch` updates only the relevant detail entry's status, proof, attribution, and publication fields. Index, eligibility, claim states, and award records are maintained by the organizers. |
 | Public proof evidence | Prepared manuscript and source links become public only after a user-authorized release. Draft links identify their intended destination. |
@@ -43,3 +43,5 @@ The website Selection Rules describe broad eligibility, team representation, the
 The prize publishes no complete internal grading matrix. This preparation checks the public submission requirements. It assigns no tier, amount, guaranteed eligibility, or priority. [Assessment guidance](https://github.com/TheJustinSunPrize/awards/blob/f8801a856529dce27e738c6b305e46d76e7c387c/docs/grading.md)
 
 The Lean pre-submission skill is optional. Its source, statement, dependency, target, axiom, and replay checks guide the technical report. Any unavailable isolation or external-checker level is disclosed in that report. [Verification guidance](https://github.com/TheJustinSunPrize/awards/blob/f8801a856529dce27e738c6b305e46d76e7c387c/docs/verification.md)
+
+The prepared hosted workflow pins actions/checkout v7.0.1 to `3d3c42e5aac5ba805825da76410c181273ba90b1`, using its Node 24 runtime. Elan v4.2.4 is downloaded with its published SHA256 checked. The hosted workflow awaits an authorized repository release and execution. [Pinned checkout source](https://github.com/actions/checkout/tree/3d3c42e5aac5ba805825da76410c181273ba90b1)
