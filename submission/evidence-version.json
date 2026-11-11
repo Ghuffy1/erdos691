@@ -1,8 +1,8 @@
 {
-  "proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
-  "evidence_commit": "6947b3de330d08ff27814812a336c89403c2df29",
-  "evidence_report": "https://github.com/Ghuffy1/erdos691/blob/6947b3de330d08ff27814812a336c89403c2df29/verification/report.md",
-  "ci_run": "https://github.com/Ghuffy1/erdos691/actions/runs/42966106312",
+  "proof_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
+  "evidence_commit": "32a44b30caae0f6d664bc38ea974a68bad7debac",
+  "evidence_report": "https://github.com/Ghuffy1/erdos691/blob/32a44b30caae0f6d664bc38ea974a68bad7debac/verification/final-20261111/report.md",
+  "ci_run": "https://github.com/Ghuffy1/erdos691/actions/runs/42968222607",
   "ci_conclusion": "success",
-  "scope": "Evidence commit adds reports and source provenance; the selected proof and build inputs match the checked source."
+  "scope": "Final exact-commit rerun. The evidence commit adds reports and release metadata without changing the checked proof inputs."
 }

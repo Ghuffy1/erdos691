@@ -55,7 +55,7 @@ A fresh full verification of the selected commit completed successfully on Novem
 
 - Checked source commit is `ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb`.
 - [Completed verification run](https://github.com/Ghuffy1/erdos691/actions/runs/42968222607)
-- [Final report and raw logs](https://github.com/Ghuffy1/erdos691/blob/main/verification/final-20261111/report.md)
+- [Final report and raw logs](https://github.com/Ghuffy1/erdos691/blob/32a44b30caae0f6d664bc38ea974a68bad7debac/verification/final-20261111/report.md)
 - Lean 4.34.0 and all nine dependency revisions were checked against their pins.
 - The replayer uses Lean's kernel. Independent human review and a separately implemented kernel check remain pending.
 

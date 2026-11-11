@@ -121,6 +121,6 @@
       "declaration": "Erdos691Audit.original_statement_verified"
     }
   ],
-  "verified_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "verified_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
   "description": "Coverage and declaration mapping. This file is not a runnable lean-verify environment manifest."
 }
