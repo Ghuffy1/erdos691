@@ -1,0 +1,8 @@
+{
+  "proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "evidence_commit": "6947b3de330d08ff27814812a336c89403c2df29",
+  "evidence_report": "https://github.com/Ghuffy1/erdos691/blob/6947b3de330d08ff27814812a336c89403c2df29/verification/report.md",
+  "ci_run": "https://github.com/Ghuffy1/erdos691/actions/runs/42966106312",
+  "ci_conclusion": "success",
+  "scope": "Evidence commit adds reports and source provenance; the selected proof and build inputs match the checked source."
+}

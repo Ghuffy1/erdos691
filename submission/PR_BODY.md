@@ -51,7 +51,7 @@ The verification entry builds the three project modules, checks the source files
 
 ## Pre-submission Lean verification
 
-The optional `lean-verify` workflow at awards commit `f8801a856529dce27e738c6b305e46d76e7c387c` was used to organize the audit. The technical report identifies the exact proof commit, actual commands, execution environment, source hashes, standard axioms, kernel replay, and unavailable verification levels. The source and environment checks are complete. [Verification report](https://github.com/Ghuffy1/erdos691/blob/main/verification/report.md), [successful private CI](https://github.com/Ghuffy1/erdos691/actions/runs/42966106312). The organizers’ independent mathematical and formal review remains pending.
+The optional `lean-verify` workflow at awards commit `f8801a856529dce27e738c6b305e46d76e7c387c` was used to organize the audit. The technical report identifies the exact proof commit, actual commands, execution environment, source hashes, standard axioms, kernel replay, and unavailable verification levels. The source and environment checks are complete. [Verification report](https://github.com/Ghuffy1/erdos691/blob/6947b3de330d08ff27814812a336c89403c2df29/verification/report.md), [successful private CI](https://github.com/Ghuffy1/erdos691/actions/runs/42966106312). The report and raw checks are pinned at evidence commit `6947b3de330d08ff27814812a336c89403c2df29` and describe proof commit `4d44c64d562f1b15cae4c93037d54f064a935873`. The organizers’ independent mathematical and formal review remains pending.
 
 ## Attribution
 
