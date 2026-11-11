@@ -1,0 +1,460 @@
+\documentclass[11pt]{amsart}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={A divisor-closed criterion for Behrend sequences},
+  pdfauthor={Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer},
+  pdfsubject={A necessary and sufficient condition for a set of multiples to have natural density one},
+  pdfkeywords={Behrend sequences, sets of multiples, natural density, divisor-closed sets}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\numberwithin{equation}{section}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Nzero}{\mathbb N_0}
+\newcommand{\Prob}{\mathbf P}
+\newcommand{\Exp}{\mathbf E}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Hblock}[2]{\mathcal H_{#1,#2}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Div}{Div}
+
+\title[Divisor-closed families and Behrend sequences]{A divisor-closed criterion for Behrend sequences}
+\author[Howe, Huffman, Kohlmeyer, and Kruer]{Will Howe, Grant Huffman, Jensen Kohlmeyer, and Liam Kruer}
+\date{November 11, 2026}
+\subjclass[2020]{11B05}
+\keywords{Behrend sequences, sets of multiples, natural density, divisor-closed sets}
+\thanks{\texttt{howew@purdue.edu} (W.~Howe), \texttt{huffma97@purdue.edu} (G.~Huffman),
+\texttt{jenwin@purdue.edu} (J.~Kohlmeyer), and \texttt{kruerl@purdue.edu} (L.~Kruer).}
+
+\begin{document}
+
+\begin{abstract}
+We give a necessary and sufficient condition for a set of positive integers to be a Behrend sequence.
+The condition quantifies over sequences of finite divisor-closed sets supported on consecutive prime blocks.
+For each element at one level, its permitted extensions at the next level retain a prescribed reciprocal mass.
+We prove that the set of multiples of $A$ has natural density one if and only if $A$ meets every such family.
+The proof combines the classical Davenport--Erd\H{o}s finite-approximation theorem with a finite pruning argument for independent geometric prime valuations.
+\end{abstract}
+
+\maketitle
+
+\section{Statement of the criterion}
+
+Write $\N=\{1,2,\ldots\}$ and $\Nzero=\{0,1,2,\ldots\}$.
+For $A\subseteq\N$, let
+\begin{equation}\label{eq:multiples}
+  M_A=\{n\in\N: a\mid n\text{ for some }a\in A\}.
+\end{equation}
+For $B\subseteq\N$, its lower natural density is
+\[
+  \underline d(B)=\liminf_{x\to\infty}\frac{|B\cap[1,x]|}{x}.
+\]
+When the corresponding limit exists, it is denoted by $d(B)$.
+A set $A$ is called a \emph{Behrend sequence} when $d(M_A)=1$.
+Erd\H{o}s asked for a necessary and sufficient condition for this property~\cite[p.~77]{Erdos1979}.
+
+Let $p_1<p_2<\cdots$ be the primes, and let $v_p(n)$ denote the exponent of $p$ in $n$.
+For $\ell\in\Nzero$, define the prime-prefix projection
+\begin{equation}\label{eq:projection}
+  \pi_\ell(n)=\prod_{i\leq\ell}p_i^{v_{p_i}(n)}.
+\end{equation}
+For integers $0\leq r\leq s$, put
+\begin{equation}\label{eq:blocks}
+  \Hblock{r}{s}
+  =\{n\in\N: v_{p_i}(n)=0\text{ whenever }i\notin(r,s]\},
+  \qquad
+  Q_{r,s}=\prod_{r<i\leq s}\left(1-\frac1{p_i}\right).
+\end{equation}
+Empty products equal one, so $\pi_0(n)=1$, $\Hblock{r}{r}=\{1\}$, and $Q_{r,r}=1$.
+A set $S\subseteq\N$ is \emph{divisor closed} if $n\in S$ and $d\mid n$ imply $d\in S$.
+
+\begin{theorem}\label{thm:main}
+For every $A\subseteq\N$, the following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em,itemsep=3pt]
+  \item The set $M_A$ has natural density one.
+  \item For every admissible family $(\ell_k,S_k)_{k\geq0}$ in Definition~\ref{def:admissible},
+  \begin{equation}\label{eq:criterion}
+    A\cap\bigcup_{k\geq0}S_k\neq\varnothing.
+  \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\Needspace{19\baselineskip}
+\begin{definition}\label{def:admissible}
+An \emph{admissible family} consists of integers
+\[
+  0\leq\ell_0<\ell_1<\ell_2<\cdots
+\]
+and finite sets $S_k\subseteq\N$, $k\in\Nzero$, satisfying $S_0=\{1\}$ and the following conditions for every $k\geq1$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em,itemsep=3pt]
+  \item\label{ad:support} $S_k$ is divisor closed and $S_k\subseteq\Hblock{\ell_0}{\ell_k}$.
+  \item\label{ad:projection} $\pi_{\ell_{k-1}}(S_k)\subseteq S_{k-1}$.
+  \item\label{ad:retention} For every $m\in S_{k-1}$, the finite set
+  \begin{equation}\label{eq:fiber}
+    F_k(m)=\{n\in\Hblock{\ell_{k-1}}{\ell_k}: mn\in S_k\}
+  \end{equation}
+  satisfies
+  \begin{equation}\label{eq:retention}
+    Q_{\ell_{k-1},\ell_k}\sum_{n\in F_k(m)}\frac1n
+       \geq 1-2^{-k-2}.
+  \end{equation}
+\end{enumerate}
+\end{definition}
+
+The definition of an admissible family is independent of $A$.
+Each condition at a fixed level involves finite sets, prime factorization, and finite reciprocal sums.
+The multiplier $1$ is permitted in~\eqref{eq:fiber}.
+The fibers may depend on the parent $m$.
+
+\begin{lemma}\label{lem:family-properties}
+Every admissible family satisfies $S_{k-1}\subseteq S_k$ for $k\geq1$.
+Each fiber $F_k(m)$ is nonempty and divisor closed.
+If $m',m\in S_{k-1}$ and $m'\mid m$, then $F_k(m)\subseteq F_k(m')$.
+\end{lemma}
+
+\begin{proof}
+The right-hand side of~\eqref{eq:retention} is positive, so $F_k(m)$ is nonempty.
+If $n\in F_k(m)$ and $d\mid n$, then $md\mid mn$.
+Divisor closure of $S_k$ gives $md\in S_k$, and $d$ has the required prime support.
+Thus $d\in F_k(m)$.
+In particular $1\in F_k(m)$, so $m\in S_k$.
+Finally, if $m'\mid m$ and $n\in F_k(m)$, then $m'n\mid mn$, giving $n\in F_k(m')$.
+\end{proof}
+
+\section{Prime valuations and the density transfer}
+
+Let $V_1,V_2,\ldots$ be independent random variables with
+\begin{equation}\label{eq:geometric}
+  \Prob(V_i=e)=\left(1-\frac1{p_i}\right)p_i^{-e},
+  \qquad e\in\Nzero.
+\end{equation}
+We work on the product probability space $\Omega=\Nzero^{\N}$ with these coordinate laws.
+For $a\in\N$, write $a\mid V$ when $v_{p_i}(a)\leq V_i$ for every $i$.
+This event depends on finitely many coordinates.
+Define
+\begin{equation}\label{eq:avoidance}
+  C=C_A=\{V: a\nmid V\text{ for every }a\in A\}.
+\end{equation}
+The event $C$ is measurable and is downward closed in the coordinatewise order on $\Omega$.
+
+For $\ell\in\Nzero$ and $0\leq r\leq s$, let
+\[
+  X_\ell=\prod_{i\leq\ell}p_i^{V_i},
+  \qquad
+  Y_{r,s}=\prod_{r<i\leq s}p_i^{V_i}.
+\]
+Independence gives the exact distributions
+\begin{equation}\label{eq:block-law}
+  \Prob(X_\ell=m)=\frac{Q_{0,\ell}}{m}\quad(m\in\Hblock{0}{\ell}),
+  \qquad
+  \Prob(Y_{r,s}=n)=\frac{Q_{r,s}}{n}\quad(n\in\Hblock{r}{s}).
+\end{equation}
+In particular, every finite-prefix cylinder has positive probability.
+We denote the second probability in~\eqref{eq:block-law} by $\nu_{r,s}(n)$.
+Then
+\begin{equation}\label{eq:block-total}
+  \sum_{n\in\Hblock{r}{s}}\nu_{r,s}(n)=1.
+\end{equation}
+
+\Needspace{8\baselineskip}
+\begin{lemma}\label{lem:finite-density}
+For every finite $F\subseteq\N$,
+\begin{equation}\label{eq:finite-density}
+  \Prob(a\mid V\text{ for some }a\in F)=d(M_F).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $e\in\Nzero$, summing~\eqref{eq:geometric} gives $\Prob(V_i\geq e)=p_i^{-e}$.
+Consequently, for every nonempty finite $J\subseteq\N$,
+\[
+  \Prob(a\mid V\text{ for every }a\in J)
+   =\prod_i p_i^{-v_{p_i}(\lcm(J))}
+   =\frac1{\lcm(J)}.
+\]
+The positive integers divisible by every member of $J$ are precisely the multiples of $\lcm(J)$, and their density is the same quantity.
+Applying finite inclusion-exclusion to both sides gives
+\[
+  \Prob(a\mid V\text{ for some }a\in F)
+  =\sum_{\varnothing\neq J\subseteq F}
+       \frac{(-1)^{|J|+1}}{\lcm(J)}
+  =d(M_F).
+\]
+The assertion for $F=\varnothing$ is immediate.
+\end{proof}
+
+We use the classical finite-approximation theorem of Davenport and Erd\H{o}s~\cite{DavenportErdos1936}.
+
+\begin{theorem}[Davenport--Erd\H{o}s]\label{thm:DE}
+For every $A\subseteq\N$, with $A_t=A\cap\{1,\ldots,t\}$,
+\begin{equation}\label{eq:DE}
+  \underline d(M_A)=\lim_{t\to\infty}d(M_{A_t}).
+\end{equation}
+\end{theorem}
+
+\begin{corollary}\label{cor:transfer}
+For every $A\subseteq\N$,
+\begin{equation}\label{eq:transfer}
+  \Prob(C_A)=1-\underline d(M_A).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:zero-one-transfer}
+  d(M_A)=1\quad\Longleftrightarrow\quad\Prob(C_A)=0.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The events $\{V:a\mid V\text{ for some }a\in A_t\}$ increase to $C_A^c$.
+Continuity from below, Lemma~\ref{lem:finite-density}, and Theorem~\ref{thm:DE} give~\eqref{eq:transfer}.
+A subset of $\N$ with lower natural density one has natural density one, because its upper natural density is at most one.
+This proves~\eqref{eq:zero-one-transfer}.
+\end{proof}
+
+\section{Positive avoidance from an admissible family}
+
+\begin{proposition}\label{prop:positive-avoidance}
+Suppose $(\ell_k,S_k)_{k\geq0}$ is admissible and $A\cap S_k=\varnothing$ for every $k$.
+Then
+\begin{equation}\label{eq:positive-bound}
+  \Prob(C_A)\geq\frac34 Q_{0,\ell_0}>0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Set $E_k=\{V:X_{\ell_k}\in S_k\}$.
+Since $S_0=\{1\}$, we have $\Prob(E_0)=Q_{0,\ell_0}$.
+The projection condition in Definition~\ref{def:admissible} gives $E_k\subseteq E_{k-1}$.
+For each $m\in S_{k-1}$, the new block $Y_{\ell_{k-1},\ell_k}$ is independent of $X_{\ell_{k-1}}$.
+Equations~\eqref{eq:block-law} and~\eqref{eq:retention} therefore give
+\begin{align}
+  \Prob(E_k)
+    &=\sum_{m\in S_{k-1}}\Prob(X_{\ell_{k-1}}=m)
+       \sum_{n\in F_k(m)}\nu_{\ell_{k-1},\ell_k}(n)\notag\\
+    &\geq (1-2^{-k-2})\Prob(E_{k-1}).\label{eq:survival-step}
+\end{align}
+For $u_j\in[0,1]$, induction gives
+$\prod_{j=1}^k(1-u_j)\geq1-\sum_{j=1}^k u_j$.
+Hence
+\[
+  \Prob(E_k)\geq Q_{0,\ell_0}\prod_{j=1}^k(1-2^{-j-2})
+       \geq \frac34 Q_{0,\ell_0}.
+\]
+Continuity from above yields
+\begin{equation}\label{eq:intersection-mass}
+  \Prob\left(\bigcap_{k\geq0}E_k\right)\geq\frac34 Q_{0,\ell_0}.
+\end{equation}
+
+We claim that $\bigcap_{k\geq0}E_k\subseteq C_A$.
+Indeed, let $V$ belong to this intersection and suppose $a\in A$ divides $V$.
+The integer $a$ has finitely many prime divisors, and $\ell_k\to\infty$.
+Thus $a\mid X_{\ell_k}$ for all sufficiently large $k$.
+Since $X_{\ell_k}\in S_k$ and $S_k$ is divisor closed, it follows that $a\in S_k$.
+This contradicts $A\cap S_k=\varnothing$.
+The claim and~\eqref{eq:intersection-mass} prove~\eqref{eq:positive-bound}.
+\end{proof}
+
+\section{Finite-prefix extraction}
+
+For $m\in\Hblock{0}{\ell}$, define
+\begin{equation}\label{eq:conditional-survival}
+  h_\ell(m)=\Prob(C_A\mid X_\ell=m).
+\end{equation}
+The conditioning is legitimate by~\eqref{eq:block-law}.
+Equivalently, fix the first $\ell$ prime exponents to those of $m$ and sample the remaining coordinates according to~\eqref{eq:geometric}.
+Let
+\begin{equation}\label{eq:prefix-safe}
+  C_\ell=\{V: a\nmid X_\ell\text{ for every }a\in A\}.
+\end{equation}
+Then $C_\ell\downarrow C_A$.
+Indeed, any integer dividing $V$ divides $X_\ell$ once the prefix contains all of its prime divisors.
+
+\begin{lemma}\label{lem:survival-properties}
+For every $\ell\in\Nzero$,
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em,itemsep=3pt]
+  \item $0\leq h_\ell(m)\leq1$ for $m\in\Hblock{0}{\ell}$.
+  \item If $m',m\in\Hblock{0}{\ell}$ and $m'\mid m$, then $h_\ell(m')\geq h_\ell(m)$.
+  \item If some $a\in A$ divides $m$, then $h_\ell(m)=0$.
+  \item $\Exp[h_\ell(X_\ell)]=\Prob(C_A)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The first assertion follows from the definition as a conditional probability.
+For the second, use the same future prime exponents with prefixes $m'$ and $m$.
+The first complete valuation vector is coordinatewise no larger than the second.
+Downward closure of $C_A$ shows that survival for the second implies survival for the first.
+For the third, every completion of the prefix $m$ remains divisible by $a$.
+The last assertion is the law of total probability applied to the countable partition $\{X_\ell=m\}$.
+\end{proof}
+
+\begin{lemma}\label{lem:zero-prefix}
+If $c=\Prob(C_A)>0$, then $h_\ell(1)\to1$ as $\ell\to\infty$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:survival-properties}, the function $h_\ell$ is at most $h_\ell(1)$ and vanishes on prefixes outside $C_\ell$.
+Consequently,
+\[
+  c=\Exp[h_\ell(X_\ell)]\leq h_\ell(1)\Prob(C_\ell).
+\]
+Since $\Prob(C_\ell)\downarrow c>0$,
+\[
+  1\geq h_\ell(1)\geq\frac{c}{\Prob(C_\ell)}\longrightarrow1.\qedhere
+\]
+\end{proof}
+
+\begin{lemma}\label{lem:finite-pruning}
+Let $r\in\Nzero$, let $G\subseteq\Hblock{0}{r}$ be finite, and let $0<\delta<1$.
+There exist $\ell>r$ and, for each $m\in G$, a finite set $N_m\subseteq\Hblock{r}{\ell}$ such that
+\begin{equation}\label{eq:pruning-score}
+  h_\ell(mn)\geq1-\delta\qquad(n\in N_m)
+\end{equation}
+and
+\begin{equation}\label{eq:pruning-mass}
+  \sum_{n\in N_m}\nu_{r,\ell}(n)>h_r(m)-2\delta.
+\end{equation}
+The cutoff $\ell$ is common to all $m\in G$.
+\end{lemma}
+
+\begin{proof}
+Fix $m\in G$ and write $\Prob_m$ and $\Exp_m$ for probability and expectation conditional on $X_r=m$.
+For $\ell\geq r$, we have $X_r=\pi_r(X_\ell)$.
+The tower property and Lemma~\ref{lem:survival-properties}\textup{(iii)} give
+\begin{align}
+  D_\ell(m)
+    &:=\Exp_m\bigl[(1-h_\ell(X_\ell))\one_{C_\ell}\bigr]\notag\\
+    &=\Prob_m(C_\ell)-h_r(m).\label{eq:defect}
+\end{align}
+Indeed, $h_\ell(X_\ell)$ vanishes off $C_\ell$ and has conditional expectation $h_r(m)$ under $\Prob_m$.
+Continuity from above gives
+$\Prob_m(C_\ell)\downarrow\Prob_m(C_A)=h_r(m)$, and therefore $D_\ell(m)\to0$.
+Since $G$ is finite, choose a common $\ell>r$ such that
+\begin{equation}\label{eq:small-defect}
+  D_\ell(m)<\delta^2\qquad(m\in G).
+\end{equation}
+
+On $C_\ell\cap\{h_\ell(X_\ell)<1-\delta\}$, the integrand in~\eqref{eq:defect} is greater than $\delta$.
+It follows that
+\[
+  \Prob_m\bigl(C_\ell\cap\{h_\ell(X_\ell)<1-\delta\}\bigr)<\delta.
+\]
+The event $\{h_\ell(X_\ell)\geq1-\delta\}$ is contained in $C_\ell$, because $\delta<1$ and $h_\ell$ vanishes on unsafe prefixes.
+Thus
+\begin{equation}\label{eq:good-mass}
+  \Prob_m\bigl(h_\ell(X_\ell)\geq1-\delta\bigr)
+     >\Prob_m(C_\ell)-\delta
+     \geq h_r(m)-\delta.
+\end{equation}
+Under $\Prob_m$, the new multiplier $Y_{r,\ell}$ has the law $\nu_{r,\ell}$, and $X_\ell=mY_{r,\ell}$.
+Consequently, the probability on the left of~\eqref{eq:good-mass} is the sum of $\nu_{r,\ell}(n)$ over
+\[
+  \{n\in\Hblock{r}{\ell}:h_\ell(mn)\geq1-\delta\}.
+\]
+This is a convergent series of nonnegative terms.
+Choose a finite subset $N_m$ whose sum is greater than that series minus $\delta$.
+Equations~\eqref{eq:pruning-score} and~\eqref{eq:pruning-mass} follow.
+\end{proof}
+
+\section{Construction of an avoiding family}
+
+\begin{proposition}\label{prop:construction}
+If $\Prob(C_A)>0$, then there exists an admissible family $(\ell_k,S_k)_{k\geq0}$ such that $A\cap S_k=\varnothing$ for every $k$.
+\end{proposition}
+
+\begin{proof}
+Set
+\begin{equation}\label{eq:delta}
+  \delta_k=2^{-k-5}\qquad(k\geq0).
+\end{equation}
+By Lemma~\ref{lem:zero-prefix}, choose $\ell_0$ with $h_{\ell_0}(1)\geq1-\delta_0$, and put $S_0=\{1\}$.
+Lemma~\ref{lem:survival-properties}\textup{(iii)} gives $A\cap S_0=\varnothing$.
+We construct the family inductively, maintaining
+\begin{equation}\label{eq:inductive-score}
+  h_{\ell_k}(s)\geq1-\delta_k\qquad(s\in S_k).
+\end{equation}
+
+Suppose that $\ell_{k-1}$ and the finite divisor-closed set $S_{k-1}\subseteq\Hblock{\ell_0}{\ell_{k-1}}$ have been chosen.
+Apply Lemma~\ref{lem:finite-pruning} with
+\[
+  r=\ell_{k-1},\qquad G=S_{k-1},\qquad\delta=\delta_k.
+\]
+It gives $\ell_k>\ell_{k-1}$ and finite sets $N_m\subseteq\Hblock{\ell_{k-1}}{\ell_k}$ for $m\in S_{k-1}$.
+Let
+\begin{equation}\label{eq:construction}
+  T_k=\bigcup_{m\in S_{k-1}}\{mn:n\in N_m\},
+  \qquad
+  S_k=\Div(T_k)=\{d\in\N:d\mid t\text{ for some }t\in T_k\}.
+\end{equation}
+The set $S_k$ is finite and divisor closed, and its elements use only primes in $(\ell_0,\ell_k]$.
+
+If $d\mid mn$ with $m\in S_{k-1}$ and $n\in N_m$, then
+$\pi_{\ell_{k-1}}(d)\mid m$, because $n$ uses only primes with indices greater than $\ell_{k-1}$.
+Divisor closure of $S_{k-1}$ therefore gives
+\[
+  \pi_{\ell_{k-1}}(d)\in S_{k-1}.
+\]
+This verifies the projection condition.
+Moreover, Lemma~\ref{lem:survival-properties}\textup{(ii)} and~\eqref{eq:pruning-score} imply
+\[
+  h_{\ell_k}(d)\geq h_{\ell_k}(mn)\geq1-\delta_k.
+\]
+Thus~\eqref{eq:inductive-score} holds at level $k$.
+Since $1-\delta_k>0$, Lemma~\ref{lem:survival-properties}\textup{(iii)} shows that no element of $S_k$ has a divisor in $A$.
+In particular $A\cap S_k=\varnothing$.
+
+For every $m\in S_{k-1}$, the inclusion $mN_m\subseteq S_k$ gives $N_m\subseteq F_k(m)$.
+Using~\eqref{eq:pruning-mass} and the induction hypothesis, we obtain
+\begin{align}
+  Q_{\ell_{k-1},\ell_k}\sum_{n\in F_k(m)}\frac1n
+    &\geq\sum_{n\in N_m}\nu_{\ell_{k-1},\ell_k}(n)\notag\\
+    &>h_{\ell_{k-1}}(m)-2\delta_k\notag\\
+    &\geq1-\delta_{k-1}-2\delta_k
+      =1-2^{-k-3}
+      \geq1-2^{-k-2}.\label{eq:budget}
+\end{align}
+The lower bound is positive, so every $N_m$ is nonempty.
+All conditions of Definition~\ref{def:admissible} have now been verified, completing the induction.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose $d(M_A)=1$.
+By Corollary~\ref{cor:transfer}, $\Prob(C_A)=0$.
+If an admissible family were disjoint from $A$ at every level, Proposition~\ref{prop:positive-avoidance} would give $\Prob(C_A)>0$.
+Hence every admissible family meets $A$.
+
+Conversely, suppose $A$ meets every admissible family.
+If $M_A$ failed to have natural density one, Corollary~\ref{cor:transfer} would give $\Prob(C_A)>0$.
+Proposition~\ref{prop:construction} would then produce an admissible family disjoint from $A$ at every level, a contradiction.
+Therefore $d(M_A)=1$.
+\end{proof}
+
+\section*{Acknowledgments}
+Artificial-intelligence tools provided by OpenAI assisted with mathematical exploration, checking arguments, and preparation of the manuscript.
+
+\begin{thebibliography}{9}
+
+\bibitem{DavenportErdos1936}
+H.~Davenport and P.~Erd\H{o}s,
+\emph{On sequences of positive integers},
+Acta Arithmetica \textbf{2} (1936), 147--151.
+
+\bibitem{Erdos1979}
+P.~Erd\H{o}s,
+\emph{Some unconventional problems in number theory},
+Ast\'erisque \textbf{61} (1979), 73--82.
+
+\end{thebibliography}
+\end{document}

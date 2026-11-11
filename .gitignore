@@ -1,0 +1,14 @@
+.lake/
+.audit/
+private/
+__pycache__/
+*.pyc
+*.olean
+*.ilean
+*.ir
+*.c
+*.o
+*.trace
+paper/*.aux
+paper/*.log
+paper/*.out

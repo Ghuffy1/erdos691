@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the proof manuscript and the exact formalization commit."
+title: "A divisor-closed criterion for Behrend sequences"
+type: software
+version: "1.0.0"
+authors:
+  - family-names: "Howe"
+    given-names: "Will"
+  - family-names: "Huffman"
+    given-names: "Grant"
+  - family-names: "Kohlmeyer"
+    given-names: "Jensen"
+  - family-names: "Kruer"
+    given-names: "Liam"
+abstract: "A complete formal proof of an arithmetic criterion for the positive multiples of an arbitrary set of integers to have natural density one."
+keywords:
+  - Behrend sequences
+  - sets of multiples
+  - Lean
+  - Erdos 691
+  - JSP-000563

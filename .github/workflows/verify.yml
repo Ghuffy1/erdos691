@@ -1,0 +1,40 @@
+name: Verify complete proof
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out the submitted commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install pinned Elan
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl --fail --location --retry 3 \
+            https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz \
+            --output elan.tar.gz
+          echo '42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  elan.tar.gz' | sha256sum --check
+          tar -xzf elan.tar.gz
+          export ELAN_HOME="$RUNNER_TEMP/elan"
+          ./elan-init -y --no-modify-path --default-toolchain none
+          echo "ELAN_HOME=$ELAN_HOME" >> "$GITHUB_ENV"
+          echo "$ELAN_HOME/bin" >> "$GITHUB_PATH"
+      - name: Fetch pinned dependency caches
+        run: lake exe cache get
+      - name: Build, audit and replay the exact commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/verify.py --expect-commit "$(git rev-parse HEAD)" --fresh
