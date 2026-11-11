@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.pdf binary
+evidence/upstream-Erdos691.lean.txt -text
+verification/**/*.log -text

@@ -1,6 +1,6 @@
 {
   "prior_private_commit": "9b6ce1846df5d6d1fa9fc428388735ca9da9c6bd",
-  "submitted_proof_commit": "87514692c7a814ea3f500eb72bfba45da8a2bf54",
+  "submitted_proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
   "change": "CRLF normalized to LF by Git; formal proof text unchanged",
   "files": [
     {
@@ -21,5 +21,7 @@
       "previous_sha256": "70c31311d33c9a9a7c2cd92ae05d112b58eb239a79238aa0da6d4420542b46bf",
       "same_after_crlf_normalization": true
     }
-  ]
+  ],
+  "local_checked_commit": "87514692c7a814ea3f500eb72bfba45da8a2bf54",
+  "ci_checked_commit": "4d44c64d562f1b15cae4c93037d54f064a935873"
 }

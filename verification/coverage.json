@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "problems": [
+    {
+      "id": "E691-JSP000563",
+      "source": "https://www.erdosproblems.com/691",
+      "requirements": [
+        {
+          "id": "arbitrary_sets",
+          "description": "Arbitrary sets of positive integers, including finite and empty cases",
+          "targets": [
+            "criterion"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "ordinary_density",
+          "description": "Ordinary natural density one for the positive set of multiples",
+          "targets": [
+            "criterion",
+            "original_bridge"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "universal_tests",
+          "description": "Universal quantification over an A-independent class of test families",
+          "targets": [
+            "criterion",
+            "original_bridge"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "finite_structure",
+          "description": "Finite divisor-closed levels, S0={1}, increasing prime-block cutoffs and support",
+          "targets": [
+            "criterion",
+            "original_bridge"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "projections",
+          "description": "Consistent projections onto preceding prime blocks",
+          "targets": [
+            "criterion",
+            "original_bridge"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "fiber_retention",
+          "description": "Every parent satisfies the fixed summable reciprocal-mass retention bound",
+          "targets": [
+            "criterion",
+            "fibers",
+            "original_bridge"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "both_directions",
+          "description": "Both implications of the necessary-and-sufficient condition",
+          "targets": [
+            "criterion",
+            "full_solution"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        },
+        {
+          "id": "exact_fibers",
+          "description": "Quotient-image fibers equal the original new-prime multiplier fibers",
+          "targets": [
+            "fibers"
+          ],
+          "coverage": "full",
+          "evidence": "submission/SCOPE.md, Challenge.lean, verification/report.md and verification/linux/check-Audit.log"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "criterion",
+      "problem": "E691-JSP000563",
+      "role": "theorem",
+      "module": "Erdos691",
+      "source": "Erdos691.lean",
+      "declaration": "Erdos691.Adaptive.erdos691"
+    },
+    {
+      "id": "full_solution",
+      "problem": "E691-JSP000563",
+      "role": "theorem",
+      "module": "Erdos691",
+      "source": "Erdos691.lean",
+      "declaration": "Erdos691.Adaptive.fullSolution"
+    },
+    {
+      "id": "fibers",
+      "problem": "E691-JSP000563",
+      "role": "theorem",
+      "module": "Erdos691",
+      "source": "Erdos691.lean",
+      "declaration": "Erdos691.Adaptive.exact_fiber_characterization"
+    },
+    {
+      "id": "original_bridge",
+      "problem": "E691-JSP000563",
+      "role": "bridge",
+      "module": "Challenge",
+      "source": "Challenge.lean",
+      "declaration": "Erdos691Audit.original_statement_verified"
+    }
+  ],
+  "verified_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "description": "Coverage and declaration mapping. This file is not a runnable lean-verify environment manifest."
+}

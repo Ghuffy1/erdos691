@@ -5,7 +5,9 @@
     "id": 318377012,
     "url": "https://github.com/Ghuffy1",
     "exists": true,
-    "account_control_verified": false
+    "account_control_verified": true,
+    "human_identity_verified": false,
+    "evidence": "Authenticated creation and push to private Ghuffy1/erdos691"
   },
   {
     "requested_handle": "JENW1N",
@@ -13,7 +15,8 @@
     "id": 153095242,
     "url": "https://github.com/JENW1N",
     "exists": true,
-    "account_control_verified": false
+    "account_control_verified": false,
+    "human_identity_verified": false
   },
   {
     "requested_handle": "H0W4RD-dev",
@@ -21,7 +24,8 @@
     "id": 313979376,
     "url": "https://github.com/H0W4RD-dev",
     "exists": true,
-    "account_control_verified": false
+    "account_control_verified": false,
+    "human_identity_verified": false
   },
   {
     "requested_handle": "lkruer",
@@ -29,6 +33,7 @@
     "id": 322680021,
     "url": "https://github.com/lkruer",
     "exists": true,
-    "account_control_verified": false
+    "account_control_verified": false,
+    "human_identity_verified": false
   }
 ]

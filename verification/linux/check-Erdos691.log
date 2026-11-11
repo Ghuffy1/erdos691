@@ -1,0 +1,223 @@
+Erdos691.lean:351:24: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+Erdos691.lean:376:18: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Erdos691.lean:465:28: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:465:43: warning: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:508:32: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:508:47: warning: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:431:43: warning: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Erdos691.lean:431:43: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Erdos691.lean:519:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:630:39: warning: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Erdos691.lean:641:39: warning: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Erdos691.lean:630:39: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Erdos691.lean:641:39: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Erdos691.lean:1080:53: warning: This simp argument is unused:
+  zetaTerm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Erdos691.DensityToDirichlet.coeff, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:1260:29: warning: This simp argument is unused:
+  hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, ih, and_left_comm, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:1260:37: warning: This simp argument is unused:
+  and_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, hi, ih, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:1260:52: warning: This simp argument is unused:
+  and_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, hi, ih, and_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:1745:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:1770:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Erdos691.lean:1802:48: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:1815:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Erdos691.lean:1851:50: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:2179:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Erdos691.lean:2187:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:2499:47: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [geomWeightOfRatio, pow_add, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:2597:6: warning: Try this: intro a G ha ih hGF hPos p hp
+Erdos691.lean:2610:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:2610:69: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Erdos691.lean:2658:20: warning: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+Erdos691.lean:2817:12: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Erdos691.lean:2735:20: warning: This simp argument is unused:
+  J
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:2891:22: warning: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+Erdos691.lean:3496:4: warning: Try this: intro hA ε hε
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Erdos691.lean:3825:18: warning: Variable name `x` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _x
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Erdos691.lean:3981:26: warning: `Nat.infinite_setOf_prime` has been deprecated: Use `Nat.infinite_setOfPred_prime` instead
+Erdos691.lean:4228:8: warning: `measurable_pi_lambda` has been deprecated: Use `Measurable.of_eval` instead
+Erdos691.lean:4231:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Erdos691.lean:4238:23: warning: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+Erdos691.lean:4374:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Erdos691.lean:4380:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Erdos691.lean:4401:56: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+Erdos691.lean:4485:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Erdos691.lean:4639:32: warning: This simp argument is unused:
+  valuationPrefix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [zeroExtension, reset, hi, hzero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:4784:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Erdos691.lean:4791:25: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+Erdos691.lean:4815:26: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+Erdos691.lean:4840:36: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+Erdos691.lean:4998:34: warning: This simp argument is unused:
+  valuationPrefix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [zeroExtension, reset, joinEquiv_apply, hi, him, hdiff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Erdos691.lean:5093:27: warning: `Finsupp.finset_sum_apply` has been deprecated: Use `Finsupp.finsetSum_apply` instead
+Erdos691.lean:5137:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+Erdos691.lean:5636:56: warning: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Erdos691.lean:5654:61: warning: `Set.setOf_true` has been deprecated: Use `Set.ofPred_true` instead

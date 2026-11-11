@@ -1,0 +1,7 @@
+Erdos691.Adaptive.erdos691 : ∀ (A : Set ℕ),
+  Erdos691.Adaptive.HasMultiplesDensityOne A ↔ Erdos691.Adaptive.MeetsEveryTest A
+Erdos691.Adaptive.fullSolution : Erdos691.Adaptive.FullSolution
+original_statement_verified : IntendedStatement
+'Erdos691.Adaptive.erdos691' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos691.Adaptive.fullSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos691Audit.original_statement_verified' depends on axioms: [propext, Classical.choice, Quot.sound]

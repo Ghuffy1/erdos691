@@ -1,6 +1,6 @@
 # Submission readiness
 
-**Private repository prepared. Final exact-commit verification is in progress.**
+**Private submission repository prepared. Technical verification passed on Windows and Ubuntu CI.**
 
 The original repository is `Ghuffy1/erdos691`, created with private visibility for branch `main`. The owner and submission coordinator is Ghuffy1. Will Howe (H0W4RD-dev), Grant Huffman (Ghuffy1), Jensen Kohlmeyer (JENW1N), and Liam Kruer (lkruer) receive equal contribution credit. The selected proof commit is recorded in `proof-version.json`.
 
@@ -15,7 +15,7 @@ The original repository is `Ghuffy1/erdos691`, created with private visibility f
 | Fifteen-declaration axiom audit | `Audit.lean` |
 | Toolchain and locked dependencies | `lean-toolchain`, `lake-manifest.json` |
 | Normal build and verification commands | `REPRODUCTION.md`, `scripts/verify.py` |
-| Future GitHub CI | `.github/workflows/verify.yml` |
+| Passed private GitHub CI | `.github/workflows/verify.yml` |
 | Team, AI and source credits | `AUTHORS.md`, `THIRD_PARTY_NOTICES.md` |
 | Current rules and requirement mapping | `RULES_AUDIT.md`, `rules-snapshot/` |
 | Combined solver/formalizer PR draft | `PR_BODY.md` |
@@ -37,4 +37,4 @@ The GitHub repository was created under Ghuffy1 with private visibility, as auth
 
 The organizers review the mathematical solution and scope, then reproduce the formal proof. They control candidate registration, eligibility, notice periods, contribution and identity decisions, priority, and any award. Their internal tier thresholds are unpublished. The current Open / No / No catalog fields are screening fields and do not prevent preparation of a complete submission.
 
-The optional verification workflow's hardened isolation and independently implemented checker levels must be distinguished from the recorded native-Windows checks. Docker isolation was unavailable during preparation. Hosted Linux CI has been prepared and awaits execution in an authorized hosted repository. The final technical report will identify the completed checks and all execution limitations.
+The normal build, explicit source checks, fifteen axiom audits, module replays, and full-environment replay passed on both Windows and isolated hosted Ubuntu CI. The selected proof commit is `4d44c64d562f1b15cae4c93037d54f064a935873`. The [verification report](../verification/report.md) records all commands, trust boundaries, and evidence. An independently implemented kernel and external human review remain pending.

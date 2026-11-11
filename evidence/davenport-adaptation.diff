@@ -1,0 +1,584 @@
+--- upstream/Erdos691.lean
++++ Erdos691/DavenportErdos.lean
+@@ -1,4 +1,12 @@
+-import Mathlib
++import Mathlib.NumberTheory.AbelSummation
++import Mathlib.NumberTheory.LSeries.RiemannZeta
++import Mathlib.NumberTheory.LSeries.SumCoeff
++import Mathlib.Data.Nat.Factorization.Basic
++import Mathlib.Algebra.GCDMonoid.FinsetLemmas
++import Mathlib.Combinatorics.Enumerative.InclusionExclusion
++import Mathlib.Tactic
++
++set_option backward.isDefEq.respectTransparency false
+ 
+ open scoped BigOperators Topology
+ open Filter Set Asymptotics Real
+@@ -391,7 +399,7 @@
+             (MeasureTheory.volume.restrict (Set.Ioi (1 : ℝ))) := by
+         exact (continuousOn_id.rpow_const fun x hx =>
+           Or.inl (ne_of_gt (lt_trans zero_lt_one hx))).aestronglyMeasurable measurableSet_Ioi
+-      simpa [f] using hcount.mul hrpow
++      convert hcount.mul hrpow using 1 <;> rfl
+     have hmajor : MeasureTheory.IntegrableOn (fun x : ℝ => x ^ (-s)) (Set.Ioi (1 : ℝ)) :=
+       integrableOn_Ioi_rpow_of_lt (by linarith : -s < -1) zero_lt_one
+     have hbound :
+@@ -590,7 +598,7 @@
+           (MeasureTheory.volume.restrict (Set.Ioc (1 : ℝ) T)) := by
+       exact (continuousOn_id.rpow_const fun x hx =>
+         Or.inl (ne_of_gt (lt_trans zero_lt_one hx.1))).aestronglyMeasurable measurableSet_Ioc
+-    simpa [fs] using herr.mul hrpow
++    convert herr.mul hrpow using 1 <;> rfl
+   have hfs_ae_tail :
+       MeasureTheory.AEStronglyMeasurable fs (MeasureTheory.volume.restrict (Set.Ioi T)) := by
+     have herr :
+@@ -601,7 +609,7 @@
+           (MeasureTheory.volume.restrict (Set.Ioi T)) := by
+       exact (continuousOn_id.rpow_const fun x hx =>
+         Or.inl (ne_of_gt (lt_trans hTpos hx))).aestronglyMeasurable measurableSet_Ioi
+-    simpa [fs] using herr.mul hrpow
++    convert herr.mul hrpow using 1 <;> rfl
+   have hpoint_fin : ∀ x ∈ Set.Ioc (1 : ℝ) T, ‖fs x‖ ≤ (1 + |δ|) * T := by
+     intro x hx
+     have hx0 : 0 ≤ x := zero_le_one.trans hx.1.le
+@@ -671,7 +679,7 @@
+     dsimp [K]
+     exact MeasureTheory.norm_setIntegral_le_of_norm_le_const measure_Ioc_lt_top hpoint_fin
+   have htail_norm_int : ‖∫ x in Set.Ioi T, fs x‖ ≤ ∫ x in Set.Ioi T, ε0 * x ^ (-s) := by
+-    simpa [MeasureTheory.IntegrableOn] using
++    exact
+       (MeasureTheory.norm_integral_le_of_norm_le (μ := MeasureTheory.volume.restrict (Set.Ioi T))
+         (by simpa [MeasureTheory.IntegrableOn] using htail_majorant_integrable)
+         (by
+@@ -1020,10 +1028,7 @@
+ 
+ lemma hasNatDensity_iff_densityToDirichletHasNatDensity {S : Set ℕ} {δ : ℝ} :
+     HasNatDensity S δ ↔ Erdos691.DensityToDirichlet.HasNatDensity S δ := by
+-  constructor <;> intro h <;>
+-    simpa [HasNatDensity, Erdos691.DensityToDirichlet.HasNatDensity, densSeq,
+-      Erdos691.DensityToDirichlet.densSeq, countUpTo, Erdos691.DensityToDirichlet.countUpTo]
+-      using h
++  rfl
+ 
+ lemma densityToDirichlet_numerator_eq {S : Set ℕ} {s : ℝ} (hs : 1 < s) :
+     Erdos691.DensityToDirichlet.numerator s S =
+@@ -1708,7 +1713,7 @@
+ 
+ lemma summable_geomWeight {q : ℝ} (hq0 : 0 ≤ q) (hq1 : q < 1) :
+     Summable (geomWeightOfRatio q) := by
+-  simpa [geomWeightOfRatio] using (summable_geometric_of_lt_one hq0 hq1).mul_left (1 - q)
++  convert (summable_geometric_of_lt_one hq0 hq1).mul_left (1 - q) using 1 <;> rfl
+ 
+ lemma geomWeight_tsum_eq_one {q : ℝ} (hq0 : 0 ≤ q) (hq1 : q < 1) :
+     ∑' k : ℕ, geomWeightOfRatio q k = 1 := by
+@@ -1765,7 +1770,7 @@
+       convert hpair using 1
+       ext x
+       rcases x with ⟨k, w⟩
+-      simpa [optionVecEquivProd, q'] using (vecWeight_consVec q k w)
++      convert (vecWeight_consVec q k w) using 1 <;> rfl
+   exact hP q hq
+ 
+ lemma tsum_vecWeight_eq_one (q : ι → ℝ)
+@@ -1814,7 +1819,7 @@
+           fun x => geomWeightOfRatio (q none) x.1 * vecWeight q' x.2 := by
+         funext x
+         rcases x with ⟨k, w⟩
+-        simpa [optionVecEquivProd, q'] using (vecWeight_consVec q k w)
++        convert (vecWeight_consVec q k w) using 1 <;> rfl
+       rw [hrewrite, Summable.tsum_prod hpair]
+       have hinner : ∀ k, ∑' w : α → ℕ,
+           geomWeightOfRatio (q none) k * vecWeight q' w = geomWeightOfRatio (q none) k := by
+@@ -2150,7 +2155,7 @@
+         apply hU
+         · intro b
+           simpa [eVec] using hvw (e.symm b)
+-        · simpa [U'] using hv
++        · convert hv using 1 <;> rfl
+       have hq_nonneg' : ∀ a : α, 0 ≤ q₂ (e a) ∧ q₂ (e a) ≤ q₁ (e a) := by
+         intro a
+         simpa using hq_nonneg (e a)
+@@ -2489,8 +2494,7 @@
+     nu q {v | e ≤ v} = ∑' v : {v : ι → ℕ // e ≤ v}, vecWeight q v := by
+       unfold nu
+       symm
+-      simpa [Set.indicator, Set.mem_setOf_eq] using
+-        (tsum_subtype {v : ι → ℕ | e ≤ v} (vecWeight q))
++      convert (tsum_subtype {v : ι → ℕ | e ≤ v} (vecWeight q)) using 1 <;> rfl
+     _ = ∑' w : ι → ℕ, vecWeight q (E w) := by
+       rw [← E.tsum_eq (fun v : {v : ι → ℕ // e ≤ v} => vecWeight q v)]
+     _ = ∑' w : ι → ℕ, (∏ i, q i ^ e i) * vecWeight q w := by
+@@ -2574,7 +2578,7 @@
+       have hlcmGPos : 0 < lcm0 G := lcm0_pos G hGPos
+       have hpfac : (Nat.lcm a (lcm0 G)).factorization p ≠ 0 := by
+         have : p ∈ (Nat.lcm a (lcm0 G)).factorization.support := by
+-          simpa [lcm0, Finset.lcm_insert, ha] using hp
++          convert hp using 1 <;> simp only [lcm0, Finset.lcm_insert] <;> rfl
+         exact Finsupp.mem_support_iff.mp this
+       by_cases hap : a.factorization p = 0
+       · have hpGfac : (lcm0 G).factorization p ≠ 0 := by
+@@ -3762,464 +3766,4 @@
+     exact (behrend_iff_R_tendsto_zero A).2 hR
+ 
+ 
+-/-! ## TeX-facing aliases matching the revised write-up -/
+-
+-/-- Lean alias for **Definition 7** (primitive part). -/
+-abbrev tex_def_primitive_part (A : Set ℕ) : Set ℕ := primitiveKernel A
+-
+-/-- Lean alias for **Lemma 5** (`lem:density-to-Dirichlet`). -/
+-theorem tex_lem_density_to_Dirichlet
+-    {S : Set ℕ} {δ : ℝ}
+-    (hS : HasNatDensity S δ) :
+-    Tendsto (fun s : ℝ => mu s S)
+-      (nhdsWithin (1 : ℝ) (Set.Ioi (1 : ℝ))) (nhds δ) :=
+-  tendsto_mu_of_hasNatDensity hS
+-
+-/-- Lean alias for **Lemma 6** (`lem:divisibility-monotone`). -/
+-theorem tex_lem_divisibility_monotone
+-    {U : Set ℕ} (hU : DivisibilityUpwardClosed U)
+-    {s t : ℝ} (hs : 1 < s) (ht : 1 < t) (hst : s ≤ t) :
+-    mu t U ≤ mu s U :=
+-  mu_le_of_divisibilityUpwardClosed hU hs ht hst
+-
+-/-- TeX-facing sequence form of **Theorem 1** (`thm:finite-approx`). -/
+-theorem tex_thm_finite_approx_seq (A : Set ℕ) :
+-    IsBehrend A ↔
+-      Tendsto (fun N : ℕ => finiteMultiplesDensity (trunc A N)) Filter.atTop (nhds 1) :=
+-  behrend_iff_truncFiniteDensities_tendsto_one A
+-
+-/-- TeX-facing finite-subset `ε`-form of **Theorem 1** (`thm:finite-approx`).
+-
+-This is the Lean replacement for the finite-subset supremum clause in the revised theorem. -/
+-theorem tex_thm_finite_approx_finiteSubset_eps (A : Set ℕ) :
+-    IsBehrend A ↔
+-      ∀ ε > 0, ∃ F : Finset ℕ,
+-        PositiveFinset F ∧ ((F : Set ℕ) ⊆ A) ∧
+-        1 - ε < finiteMultiplesDensity F :=
+-  behrend_iff_finiteSubsetApprox_eps A
+-
+-/-- Bundled Lean-facing version of **Theorem 1** (`thm:finite-approx`). -/
+-theorem tex_thm_finite_approx (A : Set ℕ) :
+-    (IsBehrend A ↔
+-      Tendsto (fun N : ℕ => finiteMultiplesDensity (trunc A N)) Filter.atTop (nhds 1)) ∧
+-    (IsBehrend A ↔
+-      ∀ ε > 0, ∃ F : Finset ℕ,
+-        PositiveFinset F ∧ ((F : Set ℕ) ⊆ A) ∧
+-        1 - ε < finiteMultiplesDensity F) := by
+-  exact ⟨tex_thm_finite_approx_seq A, tex_thm_finite_approx_finiteSubset_eps A⟩
+-
+-/-- Lean alias for **Lemma 8** (`lem:primitive-same`). -/
+-theorem tex_lem_primitive_same (A : Set ℕ) :
+-    Multiples A = Multiples (primitiveKernel A) :=
+-  multiples_primitiveKernel A
+-
+-/-- Lean alias for the density sentence in **Corollary 2** / **Corollary 9**. -/
+-theorem tex_cor_main_sieve_answer_density (A : Set ℕ) (N : ℕ) :
+-    HasNatDensity (AvoidSet (primitiveTrunc A N)) (R A N) :=
+-  hasNatDensity_avoidSet_eq_R A N
+-
+-/-- Lean alias for the `R_N → 0` form of **Corollary 2** (`cor:main-sieve-answer`). -/
+-theorem tex_cor_main_sieve_answer_limit (A : Set ℕ) :
+-    IsBehrend A ↔ Tendsto (R A) Filter.atTop (nhds 0) :=
+-  behrend_iff_R_tendsto_zero A
+-
+-/-- Lean alias for the second displayed equivalence in **Corollary 2**. -/
+-theorem tex_cor_main_sieve_answer_nonempty_sum (A : Set ℕ) :
+-    IsBehrend A ↔
+-      Tendsto
+-        (fun N : ℕ =>
+-          ∑ G ∈ (primitiveTrunc A N).powerset with G.Nonempty,
+-            (-1 : ℝ) ^ (G.card + 1) / (lcm0 G : ℝ))
+-        Filter.atTop (nhds 1) :=
+-  behrend_iff_nonempty_powerset_sum_tendsto_one A
+-
+-/-- Lean alias for the density sentence in **Corollary 9** (`cor:sieve-criterion`). -/
+-theorem tex_cor_sieve_criterion_density (A : Set ℕ) (N : ℕ) :
+-    HasNatDensity (AvoidSet (primitiveTrunc A N)) (R A N) :=
+-  tex_cor_main_sieve_answer_density A N
+-
+-/-- Lean alias for the `R_N → 0` form of **Corollary 9** (`cor:sieve-criterion`). -/
+-theorem tex_cor_sieve_criterion_limit (A : Set ℕ) :
+-    IsBehrend A ↔ Tendsto (R A) Filter.atTop (nhds 0) :=
+-  tex_cor_main_sieve_answer_limit A
+-
+-/-- Lean alias for the second displayed equivalence in **Corollary 9**. -/
+-theorem tex_cor_sieve_criterion_nonempty_sum (A : Set ℕ) :
+-    IsBehrend A ↔
+-      Tendsto
+-        (fun N : ℕ =>
+-          ∑ G ∈ (primitiveTrunc A N).powerset with G.Nonempty,
+-            (-1 : ℝ) ^ (G.card + 1) / (lcm0 G : ℝ))
+-        Filter.atTop (nhds 1) :=
+-  tex_cor_main_sieve_answer_nonempty_sum A
+-
+-/-! ## Remark 4: pairwise-coprime case -/
+-
+-section PairwiseCoprimeRemark
+-
+-/-- Convenience predicate for the pairwise-coprime condition used in the final remark. -/
+-def PairwiseCoprime (S : Set ℕ) : Prop :=
+-  Set.Pairwise S (fun a b => Nat.Coprime a b)
+-
+-/-- Reciprocal indicator sequence of `A^{prim}`.
+-
+-This is the Lean avatar of the formal series `∑_{a ∈ A^{prim}} 1 / a`: the `n`-th term is
+-`1 / n` if `n ∈ primitiveKernel A`, and `0` otherwise.  Since `primitiveKernel A` only contains
+-positive integers, the `n = 0` term is automatically `0`. -/
+-noncomputable def primitiveRecipSeq (A : Set ℕ) (n : ℕ) : ℝ :=
+-  if n ∈ primitiveKernel A then 1 / (n : ℝ) else 0
+-
+-lemma primitiveRecipSeq_nonneg (A : Set ℕ) (n : ℕ) :
+-    0 ≤ primitiveRecipSeq A n := by
+-  by_cases h : n ∈ primitiveKernel A
+-  · simp [primitiveRecipSeq, h]
+-  · simp [primitiveRecipSeq, h]
+-
+-/-- Partial sums of `primitiveRecipSeq` are exactly the reciprocal sums over `B_N = A^{prim} ∩ [1,N]`.
+-
+-This is the bookkeeping lemma needed to pass between the finitary notation in the TeX note and
+-`Summable` / `Tendsto` statements over `ℕ`. -/
+-lemma sum_range_succ_primitiveRecipSeq_eq (A : Set ℕ) (N : ℕ) :
+-    Finset.sum (Finset.range (N + 1)) (primitiveRecipSeq A)
+-      = Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ)) := by
+-  classical
+-  have hfilter :
+-      (Finset.range (N + 1)).filter (fun n => n ∈ primitiveKernel A) = primitiveTrunc A N := by
+-    ext n
+-    constructor
+-    · intro hn
+-      rcases Finset.mem_filter.mp hn with ⟨hrange, hprim⟩
+-      have hn1 : 1 ≤ n := Nat.succ_le_of_lt hprim.2.1
+-      have hnN : n ≤ N := Nat.lt_succ_iff.mp (Finset.mem_range.mp hrange)
+-      exact (mem_trunc (A := primitiveKernel A) (N := N) (a := n)).2
+-        ⟨⟨hn1, hnN⟩, hprim⟩
+-    · intro hn
+-      rcases (mem_trunc (A := primitiveKernel A) (N := N) (a := n)).1 hn with
+-        ⟨hnIcc, hprim⟩
+-      exact Finset.mem_filter.mpr
+-        ⟨Finset.mem_range.mpr (Nat.lt_succ_iff.mpr hnIcc.2), hprim⟩
+-  calc
+-    Finset.sum (Finset.range (N + 1)) (primitiveRecipSeq A)
+-        = Finset.sum (Finset.range (N + 1))
+-            (fun n => if n ∈ primitiveKernel A then (1 : ℝ) / (n : ℝ) else 0) := by
+-            simp [primitiveRecipSeq]
+-    _ = Finset.sum ((Finset.range (N + 1)).filter (fun n => n ∈ primitiveKernel A))
+-          (fun n => (1 : ℝ) / (n : ℝ)) := by
+-          rw [← Finset.sum_filter]
+-    _ = Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ)) := by
+-          rw [hfilter]
+-
+-/-- If a finite set is pairwise coprime, then its finite lcm is just its product. -/
+-lemma lcm0_eq_prod_of_pairwise_coprime
+-    {F G : Finset ℕ}
+-    (hpair : PairwiseCoprime (F : Set ℕ))
+-    (hGF : G ⊆ F) :
+-    lcm0 G = G.prod id := by
+-  have hpairG : PairwiseCoprime (G : Set ℕ) := by
+-    unfold PairwiseCoprime at hpair ⊢
+-    exact Set.Pairwise.mono
+-      (show (G : Set ℕ) ⊆ F from by
+-        intro a ha
+-        exact hGF ha)
+-      hpair
+-  unfold PairwiseCoprime at hpairG
+-  simpa [lcm0] using (Finset.lcm_eq_prod (s := G) (f := id) hpairG)
+-
+-/-- Finite product formula in the pairwise-coprime case.
+-
+-This is the finite identity
+-`R_N = ∏_{a ∈ B_N} (1 - 1 / a)` from the final remark in the TeX note. -/
+-lemma finiteAvoidDensity_eq_prod_one_sub_of_pairwise_coprime
+-    {F : Finset ℕ}
+-    (hpair : PairwiseCoprime (F : Set ℕ)) :
+-    finiteAvoidDensity F = ∏ a ∈ F, (1 - 1 / (a : ℝ)) := by
+-  classical
+-  symm
+-  calc
+-    ∏ a ∈ F, (1 - 1 / (a : ℝ))
+-        = ∑ G ∈ F.powerset, (-1 : ℝ) ^ G.card / ((G.prod id : ℕ) : ℝ) := by
+-          calc
+-            ∏ a ∈ F, (1 - 1 / (a : ℝ))
+-                = ∑ G ∈ F.powerset, (-1 : ℝ) ^ G.card * ∏ a ∈ G, (1 / (a : ℝ)) := by
+-                    simpa using
+-                      (Finset.prod_sub
+-                        (f := fun _ : ℕ => (1 : ℝ))
+-                        (g := fun a : ℕ => (1 : ℝ) / (a : ℝ))
+-                        F)
+-            _ = ∑ G ∈ F.powerset, (-1 : ℝ) ^ G.card / ((G.prod id : ℕ) : ℝ) := by
+-                  refine Finset.sum_congr rfl ?_
+-                  intro G hG
+-                  have hprod :
+-                      (∏ a ∈ G, (1 / (a : ℝ))) = ((∏ a ∈ G, (a : ℝ)))⁻¹ := by
+-                    simp [one_div, Finset.prod_inv_distrib]
+-                  rw [div_eq_mul_inv, hprod]
+-                  congr 1
+-                  simpa using (Finset.prod_natCast (s := G) (f := id) (R := ℝ))
+-    _ = finiteAvoidDensity F := by
+-          unfold finiteAvoidDensity
+-          refine Finset.sum_congr rfl ?_
+-          intro G hG
+-          have hGF : G ⊆ F := Finset.mem_powerset.mp hG
+-          have hlcm : ((lcm0 G : ℕ) : ℝ) = ((G.prod id : ℕ) : ℝ) := by
+-            exact congrArg (fun n : ℕ => (n : ℝ))
+-              (lcm0_eq_prod_of_pairwise_coprime (F := F) (G := G) hpair hGF)
+-          simpa [hlcm]
+-
+-/-- The corollary's finite remainder `R_N` becomes an Euler product in the pairwise-coprime case. -/
+-theorem R_eq_prod_one_sub_of_pairwise_coprime
+-    (A : Set ℕ)
+-    (hpair : PairwiseCoprime (primitiveKernel A)) :
+-    ∀ N, R A N = ∏ a ∈ primitiveTrunc A N, (1 - 1 / (a : ℝ)) := by
+-  intro N
+-  have hpairN : PairwiseCoprime ((primitiveTrunc A N : Finset ℕ) : Set ℕ) := by
+-    unfold PairwiseCoprime at hpair ⊢
+-    exact Set.Pairwise.mono (trunc_subset (primitiveKernel A) N) hpair
+-  simpa [R] using
+-    (finiteAvoidDensity_eq_prod_one_sub_of_pairwise_coprime
+-      (F := primitiveTrunc A N) hpairN)
+-
+-/-- Under `1 ∉ A^{prim}`, every element of `B_N` is at least `2`. -/
+-lemma one_lt_of_mem_primitiveTrunc_of_h1
+-    {A : Set ℕ} {N a : ℕ}
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (ha : a ∈ primitiveTrunc A N) :
+-    1 < a := by
+-  have haPrim : a ∈ primitiveKernel A := trunc_subset (primitiveKernel A) N ha
+-  have hapos : 0 < a := haPrim.2.1
+-  have hne : a ≠ 1 := by
+-    intro h
+-    apply h1
+-    simpa [h] using haPrim
+-  exact lt_of_le_of_ne (Nat.succ_le_of_lt hapos) (Ne.symm hne)
+-
+-lemma two_le_of_mem_primitiveTrunc_of_h1
+-    {A : Set ℕ} {N a : ℕ}
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (ha : a ∈ primitiveTrunc A N) :
+-    2 ≤ a := by
+-  exact Nat.succ_le_of_lt (one_lt_of_mem_primitiveTrunc_of_h1 h1 ha)
+-
+-/-- Positivity of the Euler factors in the pairwise-coprime remark. -/
+-lemma one_sub_inv_pos_of_mem_primitiveTrunc
+-    {A : Set ℕ} {N a : ℕ}
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (ha : a ∈ primitiveTrunc A N) :
+-    0 < 1 - 1 / (a : ℝ) := by
+-  have ha_gt_one : (1 : ℝ) < a := by
+-    exact_mod_cast (one_lt_of_mem_primitiveTrunc_of_h1 h1 ha)
+-  have hapos : 0 < (a : ℝ) := by
+-    linarith
+-  have haminus : 0 < (a : ℝ) - 1 := by
+-    linarith
+-  have hrewrite : 1 - 1 / (a : ℝ) = ((a : ℝ) - 1) / (a : ℝ) := by
+-    field_simp [hapos.ne']
+-  rw [hrewrite]
+-  exact div_pos haminus hapos
+-
+-/-- Quantitative logarithmic bounds for the Euler factors `1 - 1 / a` when `a ≥ 2`.
+-
+-These are the two inequalities needed to compare `log R_N` with `-∑_{a ∈ B_N} 1 / a`. -/
+-lemma log_one_sub_inv_bounds_of_two_le {a : ℕ} (ha : 2 ≤ a) :
+-    -(2 : ℝ) / (a : ℝ) ≤ Real.log (1 - 1 / (a : ℝ)) ∧
+-      Real.log (1 - 1 / (a : ℝ)) ≤ -(1 : ℝ) / (a : ℝ) := by
+-  have ha_real : (2 : ℝ) ≤ (a : ℝ) := by
+-    exact_mod_cast ha
+-  have ha1_nat : 1 < a := lt_of_lt_of_le (by decide : 1 < 2) ha
+-  have hapos_nat : 0 < a := lt_trans Nat.zero_lt_one ha1_nat
+-  have hapos : 0 < (a : ℝ) := by
+-    exact_mod_cast hapos_nat
+-  have haminus : 0 < (a : ℝ) - 1 := by
+-    linarith
+-  have hrewrite : 1 - 1 / (a : ℝ) = ((a : ℝ) - 1) / (a : ℝ) := by
+-    field_simp [ne_of_gt hapos]
+-  have hx : 0 < 1 - 1 / (a : ℝ) := by
+-    rw [hrewrite]
+-    exact div_pos haminus hapos
+-  constructor
+-  · have hlog :
+-        1 - (1 - 1 / (a : ℝ))⁻¹ ≤ Real.log (1 - 1 / (a : ℝ)) :=
+-      Real.one_sub_inv_le_log_of_pos hx
+-    have hfrac :
+-        (1 : ℝ) / ((a : ℝ) - 1) ≤ 2 / (a : ℝ) := by
+-      rw [div_le_div_iff₀ haminus hapos]
+-      nlinarith [ha_real]
+-    have hdivne : ((a : ℝ) - 1) / (a : ℝ) ≠ 0 := by
+-      exact div_ne_zero (ne_of_gt haminus) (ne_of_gt hapos)
+-    have hleft :
+-        1 - (1 - 1 / (a : ℝ))⁻¹ = -(1 : ℝ) / ((a : ℝ) - 1) := by
+-      rw [hrewrite]
+-      field_simp [hdivne, ne_of_gt hapos, ne_of_gt haminus]
+-      ring
+-    have hlog' :
+-        -(1 : ℝ) / ((a : ℝ) - 1) ≤ Real.log (1 - 1 / (a : ℝ)) := by
+-      rw [hleft] at hlog
+-      exact hlog
+-    have hnegfrac : -(2 : ℝ) / (a : ℝ) ≤ -(1 : ℝ) / ((a : ℝ) - 1) := by
+-      simpa [neg_div] using (neg_le_neg hfrac)
+-    exact le_trans hnegfrac hlog'
+-  · calc
+-      Real.log (1 - 1 / (a : ℝ)) ≤ (1 - 1 / (a : ℝ)) - 1 :=
+-        Real.log_le_sub_one_of_pos hx
+-      _ = -(1 : ℝ) / (a : ℝ) := by ring_nf
+-
+-lemma sum_log_lower_bound
+-    (A : Set ℕ) (N : ℕ)
+-    (h1 : 1 ∉ primitiveKernel A) :
+-    -(2 : ℝ) * (∑ a ∈ primitiveTrunc A N, (1 : ℝ) / (a : ℝ))
+-      ≤ ∑ a ∈ primitiveTrunc A N, Real.log (1 - 1 / (a : ℝ)) := by
+-  classical
+-  calc
+-    -(2 : ℝ) * (∑ a ∈ primitiveTrunc A N, (1 : ℝ) / (a : ℝ))
+-        = ∑ a ∈ primitiveTrunc A N, (-(2 : ℝ) / (a : ℝ)) := by
+-            rw [Finset.mul_sum]
+-            refine Finset.sum_congr rfl ?_
+-            intro a ha
+-            ring
+-    _ ≤ ∑ a ∈ primitiveTrunc A N, Real.log (1 - 1 / (a : ℝ)) := by
+-          refine Finset.sum_le_sum ?_
+-          intro a ha
+-          exact (log_one_sub_inv_bounds_of_two_le
+-            (two_le_of_mem_primitiveTrunc_of_h1 h1 ha)).1
+-
+-lemma sum_log_upper_bound
+-    (A : Set ℕ) (N : ℕ)
+-    (h1 : 1 ∉ primitiveKernel A) :
+-    ∑ a ∈ primitiveTrunc A N, Real.log (1 - 1 / (a : ℝ))
+-      ≤ - (∑ a ∈ primitiveTrunc A N, (1 : ℝ) / (a : ℝ)) := by
+-  classical
+-  calc
+-    ∑ a ∈ primitiveTrunc A N, Real.log (1 - 1 / (a : ℝ))
+-        ≤ ∑ a ∈ primitiveTrunc A N, (-(1 : ℝ) / (a : ℝ)) := by
+-            refine Finset.sum_le_sum ?_
+-            intro a ha
+-            exact (log_one_sub_inv_bounds_of_two_le
+-              (two_le_of_mem_primitiveTrunc_of_h1 h1 ha)).2
+-    _ = - (∑ a ∈ primitiveTrunc A N, (1 : ℝ) / (a : ℝ)) := by
+-          rw [← Finset.sum_neg_distrib]
+-          refine Finset.sum_congr rfl ?_
+-          intro a ha
+-          ring
+-
+-/-- Rewrite the finite Euler product as an exponential of a finite logarithmic sum. -/
+-lemma R_eq_exp_sum_log_of_pairwise_coprime
+-    (A : Set ℕ)
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (hpair : PairwiseCoprime (primitiveKernel A))
+-    (N : ℕ) :
+-    R A N = Real.exp
+-      (Finset.sum (primitiveTrunc A N) (fun a => Real.log (1 - 1 / (a : ℝ)))) := by
+-  calc
+-    R A N = ∏ a ∈ primitiveTrunc A N, (1 - 1 / (a : ℝ)) :=
+-      R_eq_prod_one_sub_of_pairwise_coprime A hpair N
+-    _ = ∏ a ∈ primitiveTrunc A N, Real.exp (Real.log (1 - 1 / (a : ℝ))) := by
+-          refine Finset.prod_congr rfl ?_
+-          intro a ha
+-          rw [Real.exp_log (one_sub_inv_pos_of_mem_primitiveTrunc h1 ha)]
+-    _ = Real.exp
+-          (Finset.sum (primitiveTrunc A N) (fun a => Real.log (1 - 1 / (a : ℝ)))) := by
+-          symm
+-          simpa using
+-            (Real.exp_sum (primitiveTrunc A N) (fun a => Real.log (1 - 1 / (a : ℝ))))
+-
+-/-- **Remark 4** (pairwise coprime case) from the revised TeX note, in partial-sum form.
+-
+-This is the formal version of
+-`M_A has density 1 ↔ ∑_{a ∈ A^{prim} ∩ [1,N]} 1 / a → ∞`
+-under the assumptions that `1 ∉ A^{prim}` and the elements of `A^{prim}` are pairwise coprime. -/
+-theorem behrend_iff_primitiveRecipPartialSums_tendsto_atTop_of_pairwise_coprime
+-    (A : Set ℕ)
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (hpair : PairwiseCoprime (primitiveKernel A)) :
+-    IsBehrend A ↔
+-      Tendsto (fun N : ℕ => Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ)))
+-        Filter.atTop Filter.atTop := by
+-  let S : ℕ → ℝ := fun N => Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ))
+-  let L : ℕ → ℝ := fun N =>
+-    Finset.sum (primitiveTrunc A N) (fun a => Real.log (1 - 1 / (a : ℝ)))
+-  change IsBehrend A ↔ Tendsto S Filter.atTop Filter.atTop
+-  constructor
+-  · intro hA
+-    have hR : Tendsto (R A) Filter.atTop (nhds 0) :=
+-      (behrend_iff_R_tendsto_zero A).1 hA
+-    have hExp : Tendsto (fun N => Real.exp (L N)) Filter.atTop (nhds 0) := by
+-      refine Tendsto.congr' ?_ hR
+-      exact Filter.Eventually.of_forall (fun N => by
+-        simp [L, R_eq_exp_sum_log_of_pairwise_coprime, h1, hpair])
+-    have hL : Tendsto L Filter.atTop atBot :=
+-      Real.tendsto_exp_comp_nhds_zero.mp hExp
+-    have hnegTwoS : Tendsto (fun N => (-2 : ℝ) * S N) Filter.atTop atBot := by
+-      apply Filter.tendsto_atBot_mono
+-      · intro N
+-        simpa [S, L] using sum_log_lower_bound A N h1
+-      · simpa [L] using hL
+-    have hS' :
+-        Tendsto (fun N => (-(1 / 2 : ℝ)) * (((-2 : ℝ) * S N))) Filter.atTop Filter.atTop :=
+-      (tendsto_const_mul_atTop_of_neg
+-        (l := Filter.atTop) (f := fun N => (-2 : ℝ) * S N) (r := -(1 / 2 : ℝ))
+-        (by norm_num)).2 hnegTwoS
+-    convert hS' using 1
+-    ext N
+-    ring_nf
+-  · intro hS
+-    have hnegS : Tendsto (fun N => (-1 : ℝ) * S N) Filter.atTop atBot :=
+-      (tendsto_const_mul_atBot_of_neg
+-        (l := Filter.atTop) (f := S) (r := (-1 : ℝ)) (by norm_num)).2 hS
+-    have hL : Tendsto L Filter.atTop atBot := by
+-      apply Filter.tendsto_atBot_mono
+-      · intro N
+-        simpa [S, L] using sum_log_upper_bound A N h1
+-      · simpa [S] using hnegS
+-    have hExp : Tendsto (fun N => Real.exp (L N)) Filter.atTop (nhds 0) :=
+-      Real.tendsto_exp_atBot.comp hL
+-    have hR : Tendsto (R A) Filter.atTop (nhds 0) := by
+-      refine Tendsto.congr' ?_ hExp
+-      exact Filter.Eventually.of_forall (fun N => by
+-        symm
+-        simp [L, R_eq_exp_sum_log_of_pairwise_coprime, h1, hpair])
+-    exact (behrend_iff_R_tendsto_zero A).2 hR
+-
+-/-- **Remark 4** again, now in "divergent reciprocal series" form.
+-
+-Because `primitiveRecipSeq A` is the indicator reciprocal sequence of `A^{prim}`, this is the Lean
+-version of
+-`M_A has density 1 ↔ ∑_{a ∈ A^{prim}} 1 / a = ∞`
+-under the pairwise-coprime hypothesis. -/
+-theorem behrend_iff_not_summable_primitiveRecipSeq_of_pairwise_coprime
+-    (A : Set ℕ)
+-    (h1 : 1 ∉ primitiveKernel A)
+-    (hpair : PairwiseCoprime (primitiveKernel A)) :
+-    IsBehrend A ↔ ¬ Summable (primitiveRecipSeq A) := by
+-  rw [not_summable_iff_tendsto_nat_atTop_of_nonneg
+-    (f := primitiveRecipSeq A) (by intro n; exact primitiveRecipSeq_nonneg A n)]
+-  let P : ℕ → ℝ := fun N => Finset.sum (Finset.range N) (primitiveRecipSeq A)
+-  have hshift :
+-      Tendsto (fun N : ℕ => P (N + 1)) Filter.atTop Filter.atTop
+-        ↔ Tendsto P Filter.atTop Filter.atTop := by
+-    simpa [P] using (tendsto_add_atTop_iff_nat (f := P) 1)
+-  constructor
+-  · intro hA
+-    have hmain :
+-        Tendsto (fun N : ℕ => Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ)))
+-          Filter.atTop Filter.atTop :=
+-      (behrend_iff_primitiveRecipPartialSums_tendsto_atTop_of_pairwise_coprime
+-        A h1 hpair).1 hA
+-    have hmain' :
+-        Tendsto (fun N : ℕ => P (N + 1)) Filter.atTop Filter.atTop := by
+-      simpa [P, sum_range_succ_primitiveRecipSeq_eq] using hmain
+-    exact hshift.mp hmain'
+-  · intro hP
+-    have hP' : Tendsto (fun N : ℕ => P (N + 1)) Filter.atTop Filter.atTop :=
+-      hshift.mpr hP
+-    have hmain :
+-        Tendsto (fun N : ℕ => Finset.sum (primitiveTrunc A N) (fun a => (1 : ℝ) / (a : ℝ)))
+-          Filter.atTop Filter.atTop := by
+-      simpa [P, sum_range_succ_primitiveRecipSeq_eq] using hP'
+-    exact (behrend_iff_primitiveRecipPartialSums_tendsto_atTop_of_pairwise_coprime
+-      A h1 hpair).2 hmain
+-
+-end PairwiseCoprimeRemark
+-
+-#print axioms Erdos691.tex_thm_finite_approx
+--- 'Erdos691.tex_thm_finite_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+-
+ end Erdos691

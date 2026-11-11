@@ -14,7 +14,7 @@ JSP-000563 is outside the 50-problem MathDB pilot. Its applicable route is the s
 | Complete formal proof | `Erdos691.lean`, `Erdos691.Adaptive.erdos691` and `fullSolution`. |
 | Original problem and exact location | Erdős 691, 1979 source p. 77, catalog JSP-000563. Recorded in `SCOPE.md`. |
 | Exact formal statement and correspondence | `Challenge.lean`, `SCOPE.md`, and the independent fiber characterization. |
-| Original repository owned by submitter | Intended owner Ghuffy1. Local preparation cannot establish ownership of a future GitHub repository. |
+| Original repository owned by submitter | Private repository created and pushed through authenticated Ghuffy1 access. Contributor identity verification remains for the organizers. |
 | Named branch and full commit | `main` and the selected proof SHA recorded in `proof-version.json`. |
 | Reproducible version and dependencies | Exact Lean pin, nine dependency SHAs, `REPRODUCTION.md`, and `scripts/verify.py`. |
 | Every target and bridge checked | Default build covers all three modules. Explicit source checks and fifteen axiom audits are recorded in the verification report. |
@@ -44,4 +44,4 @@ The prize publishes no complete internal grading matrix. This preparation checks
 
 The Lean pre-submission skill is optional. Its source, statement, dependency, target, axiom, and replay checks guide the technical report. Any unavailable isolation or external-checker level is disclosed in that report. [Verification guidance](https://github.com/TheJustinSunPrize/awards/blob/f8801a856529dce27e738c6b305e46d76e7c387c/docs/verification.md)
 
-The prepared hosted workflow pins actions/checkout v7.0.1 to `3d3c42e5aac5ba805825da76410c181273ba90b1`, using its Node 24 runtime. Elan v4.2.4 is downloaded with its published SHA256 checked. The hosted workflow awaits an authorized repository release and execution. [Pinned checkout source](https://github.com/actions/checkout/tree/3d3c42e5aac5ba805825da76410c181273ba90b1)
+The prepared hosted workflow pins actions/checkout v7.0.1 to `3d3c42e5aac5ba805825da76410c181273ba90b1`, using its Node 24 runtime. Elan v4.2.4 is downloaded with its published SHA256 checked. The hosted workflow passed in the authorized private repository on November 11, 2026. [Pinned checkout source](https://github.com/actions/checkout/tree/3d3c42e5aac5ba805825da76410c181273ba90b1)

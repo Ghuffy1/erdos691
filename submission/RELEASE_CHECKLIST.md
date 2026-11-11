@@ -16,6 +16,8 @@
 - [x] Scoped catalog patch and completed PR draft supplied.
 - [x] Four personal claim drafts prepared in the ignored private directory.
 
+- [x] Complete the normal build, source checks, fifteen axiom audits, and full-environment kernel replay on Windows and private Ubuntu CI.
+
 ## Conditions for public release
 
 - [x] Preserve the upstream file-level Apache 2.0 notice, include the license, and record the adapted source and modifications.
@@ -23,7 +25,8 @@
 - [ ] Confirm the authors' account mapping, equal credit, actual contribution descriptions, and authority for the proposed submission.
 - [x] Prepare Apache 2.0 for code and CC BY 4.0 for the manuscript and original documentation, subject to the user’s release instruction.
 - [ ] Obtain the user's instruction to release the repository.
-- [ ] Create the original repository under Ghuffy1, with the selected proof commit contained in main. Check every pinned link after publication.
+- [x] Create the original private repository under Ghuffy1, with the selected proof commit contained in main.
+- [ ] After authorized public release, check every pinned link without privileged access.
 
 ## Contribution PR
 

@@ -1,0 +1,25 @@
+{
+  "verdict": "VERIFICATION_PASSED",
+  "proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "main_theorem": "Erdos691.Adaptive.erdos691",
+  "statement_bridge": "Erdos691Audit.original_statement_verified",
+  "windows_commit": "87514692c7a814ea3f500eb72bfba45da8a2bf54",
+  "ci_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "proof_config_script_hashes_equal": true,
+  "windows_exit_code": 0,
+  "linux_exit_code": 0,
+  "axiom_audits_per_run": 15,
+  "standard_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "ci_url": "https://github.com/Ghuffy1/erdos691/actions/runs/42966106312",
+  "review_limits": [
+    "Novelty and first priority unestablished",
+    "Organizer mathematical and scope review pending",
+    "Contributor identity and personal claim confirmation pending",
+    "Independent kernel implementation not used"
+  ],
+  "privacy": "Private GitHub repository, public release awaits user instruction"
+}

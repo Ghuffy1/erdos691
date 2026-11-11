@@ -1,0 +1,312 @@
+⚠ [3870/3873] Built Erdos691 (32s)
+warning: Erdos691.lean:351:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Erdos691.lean:376:18: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Erdos691.lean:465:28: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:465:43: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:508:32: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:508:47: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, mul_assoc, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:431:43: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos691.lean:431:43: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos691.lean:519:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:630:39: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos691.lean:641:39: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos691.lean:630:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos691.lean:641:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos691.lean:1080:53: This simp argument is unused:
+  zetaTerm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Erdos691.DensityToDirichlet.coeff, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:1260:29: This simp argument is unused:
+  hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, ih, and_left_comm, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:1260:37: This simp argument is unused:
+  and_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, hi, ih, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:1260:52: This simp argument is unused:
+  and_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.inf_insert, hi, ih, and_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:1745:74: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:1770:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos691.lean:1802:48: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:1815:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos691.lean:1851:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:2179:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos691.lean:2187:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:2499:47: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [geomWeightOfRatio, pow_add, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:2597:6: Try this: intro a G ha ih hGF hPos p hp
+warning: Erdos691.lean:2610:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:2610:69: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos691.lean:2658:20: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+warning: Erdos691.lean:2817:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Erdos691.lean:2735:20: This simp argument is unused:
+  J
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:2891:22: `Nat.factorization_prod_pow_eq_self` has been deprecated: Use `Nat.prod_factorization_pow_eq_self` instead
+warning: Erdos691.lean:3496:4: Try this: intro hA ε hε
+info: Erdos691.lean:3749:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Erdos691.lean:3794:8: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: Erdos691.lean:3825:18: Variable name `x` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _x
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Erdos691.lean:3981:26: `Nat.infinite_setOf_prime` has been deprecated: Use `Nat.infinite_setOfPred_prime` instead
+warning: Erdos691.lean:4228:8: `measurable_pi_lambda` has been deprecated: Use `Measurable.of_eval` instead
+warning: Erdos691.lean:4231:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Erdos691.lean:4238:23: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: Erdos691.lean:4374:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos691.lean:4380:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos691.lean:4401:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Erdos691.lean:4485:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Erdos691.lean:4639:32: This simp argument is unused:
+  valuationPrefix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [zeroExtension, reset, hi, hzero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:4784:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Erdos691.lean:4791:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Erdos691.lean:4815:26: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Erdos691.lean:4840:36: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Erdos691.lean:4998:34: This simp argument is unused:
+  valuationPrefix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [zeroExtension, reset, joinEquiv_apply, hi, him, hdiff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos691.lean:5093:27: `Finsupp.finset_sum_apply` has been deprecated: Use `Finsupp.finsetSum_apply` instead
+warning: Erdos691.lean:5137:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos691.lean:5636:56: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Erdos691.lean:5654:61: `Set.setOf_true` has been deprecated: Use `Set.ofPred_true` instead
+ℹ [3871/3873] Built Challenge (1.0s)
+info: Challenge.lean:65:0: Erdos691.Adaptive.erdos691 : ∀ (A : Set ℕ),
+  Erdos691.Adaptive.HasMultiplesDensityOne A ↔ Erdos691.Adaptive.MeetsEveryTest A
+info: Challenge.lean:66:0: Erdos691.Adaptive.fullSolution : Erdos691.Adaptive.FullSolution
+info: Challenge.lean:67:0: original_statement_verified : IntendedStatement
+info: Challenge.lean:68:0: 'Erdos691.Adaptive.erdos691' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Challenge.lean:69:0: 'Erdos691.Adaptive.fullSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Challenge.lean:70:0: 'Erdos691Audit.original_statement_verified' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3872/3873] Built Audit (1.7s)
+info: Audit.lean:4:0: Erdos691.Adaptive.erdos691 : ∀ (A : Set.{0} ℕ),
+  Erdos691.Adaptive.HasMultiplesDensityOne A ↔ Erdos691.Adaptive.MeetsEveryTest A
+info: Audit.lean:6:0: structure Erdos691.Adaptive.AdmissibleTest : Type
+number of parameters: 0
+fields:
+  Erdos691.Adaptive.AdmissibleTest.cutoff : ℕ → ℕ
+  Erdos691.Adaptive.AdmissibleTest.increasing : StrictMono self.cutoff
+  Erdos691.Adaptive.AdmissibleTest.level : ℕ → Finset ℕ
+  Erdos691.Adaptive.AdmissibleTest.start : self.level 0 = {1}
+  Erdos691.Adaptive.AdmissibleTest.supported : ∀ (k m : ℕ),
+      m ∈ self.level k → Erdos691.Adaptive.SupportedOn (self.cutoff 0) (self.cutoff k) m
+  Erdos691.Adaptive.AdmissibleTest.downward : ∀ (k m : ℕ),
+      m ∈ self.level k → ∀ (d : ℕ), 0 < d → d ∣ m → d ∈ self.level k
+  Erdos691.Adaptive.AdmissibleTest.projects : ∀ (k m : ℕ),
+      m ∈ self.level (k + 1) → Erdos691.Adaptive.primePrefix (self.cutoff k) m ∈ self.level k
+  Erdos691.Adaptive.AdmissibleTest.retention : ∀ (k m : ℕ),
+      m ∈ self.level k →
+        1 - Erdos691.Adaptive.loss k ≤
+          Erdos691.Adaptive.blockNormalization (self.cutoff k) (self.cutoff (k + 1)) *
+            ∑ n ∈ Erdos691.Adaptive.fiber (self.level (k + 1)) (self.cutoff k) m, 1 / ↑n
+constructor:
+  Erdos691.Adaptive.AdmissibleTest.mk (cutoff : ℕ → ℕ) (increasing : StrictMono cutoff) (level : ℕ → Finset ℕ)
+    (start : level 0 = {1})
+    (supported : ∀ (k m : ℕ), m ∈ level k → Erdos691.Adaptive.SupportedOn (cutoff 0) (cutoff k) m)
+    (downward : ∀ (k m : ℕ), m ∈ level k → ∀ (d : ℕ), 0 < d → d ∣ m → d ∈ level k)
+    (projects : ∀ (k m : ℕ), m ∈ level (k + 1) → Erdos691.Adaptive.primePrefix (cutoff k) m ∈ level k)
+    (retention :
+      ∀ (k m : ℕ),
+        m ∈ level k →
+          1 - Erdos691.Adaptive.loss k ≤
+            Erdos691.Adaptive.blockNormalization (cutoff k) (cutoff (k + 1)) *
+              ∑ n ∈ Erdos691.Adaptive.fiber (level (k + 1)) (cutoff k) m, 1 / ↑n) :
+    Erdos691.Adaptive.AdmissibleTest
+info: Audit.lean:7:0: def Erdos691.Adaptive.FullSolution : Prop :=
+∀ (A : Set ℕ), Erdos691.Adaptive.HasMultiplesDensityOne A ↔ Erdos691.Adaptive.MeetsEveryTest A
+info: Audit.lean:8:0: theorem Erdos691.Adaptive.erdos691 : ∀ (A : Set ℕ),
+  Erdos691.Adaptive.HasMultiplesDensityOne A ↔ Erdos691.Adaptive.MeetsEveryTest A :=
+fun A =>
+  { mp := Erdos691.Adaptive.meets_every_test_of_density_one A,
+    mpr := Erdos691.Adaptive.density_one_of_meets_every_test A }
+info: Audit.lean:9:0: def Erdos691Audit.IntendedStatement : Prop :=
+∀ (A : Set ℕ), Erdos691Audit.DensityOne A ↔ Erdos691Audit.TestsMeet A
+info: Audit.lean:10:0: def Erdos691Audit.TestsMeet : Set ℕ → Prop :=
+fun A =>
+  ∀ (l : ℕ → ℕ) (S : ℕ → Finset ℕ),
+    StrictMono l →
+      S 0 = {1} →
+        (∀ (k m : ℕ), m ∈ S k → Erdos691Audit.Supported (l 0) (l k) m) →
+          (∀ (k m : ℕ), m ∈ S k → ∀ (d : ℕ), 0 < d → d ∣ m → d ∈ S k) →
+            (∀ (k m : ℕ), m ∈ S (k + 1) → Erdos691Audit.PrimePrefix (l k) m ∈ S k) →
+              (∀ (k m : ℕ),
+                  m ∈ S k →
+                    1 - 1 / 2 ^ (k + 3) ≤
+                      (∏ i ∈ Finset.Ico (l k) (l (k + 1)), (1 - 1 / ↑(Nat.nth Nat.Prime i))) *
+                        ∑ n ∈ Erdos691Audit.NewFactors (S (k + 1)) (l k) m, 1 / ↑n) →
+                ∃ k, ∃ m ∈ S k, m ∈ A
+info: Audit.lean:11:0: theorem Erdos691Audit.original_statement_verified : Erdos691Audit.IntendedStatement :=
+fun A =>
+  Eq.mpr (id (congrArg (fun _a => _a ↔ Erdos691Audit.TestsMeet A) (propext (Erdos691Audit.density_bridge A))))
+    (Eq.mpr
+      (id
+        (congrArg (fun _a => Erdos691.Adaptive.HasMultiplesDensityOne A ↔ _a) (propext (Erdos691Audit.test_bridge A))))
+      (Erdos691.Adaptive.erdos691 A))
+info: Audit.lean:13:0: 'Erdos691.behrend_iff_finiteSubsetApprox_eps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:14:0: 'Erdos691.Adaptive.density_one_iff_avoidance_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:15:0: 'Erdos691.Adaptive.finite_lower_pruning' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:16:0: 'Erdos691.Adaptive.parent_extensions_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:17:0: 'Erdos691.Adaptive.extend_good_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:18:0: 'Erdos691.Adaptive.exists_avoiding_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:19:0: 'Erdos691.Adaptive.missing_test_positive_avoidance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:20:0: 'Erdos691.Adaptive.meets_every_test_of_density_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:21:0: 'Erdos691.Adaptive.density_one_of_meets_every_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:22:0: 'Erdos691.Adaptive.erdos691' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:23:0: 'Erdos691.Adaptive.fullSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:24:0: 'Erdos691.Adaptive.exact_fiber_characterization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:25:0: 'Erdos691Audit.density_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:26:0: 'Erdos691Audit.test_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:27:0: 'Erdos691Audit.original_statement_verified' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3873 jobs).

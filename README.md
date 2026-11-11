@@ -26,6 +26,10 @@ The script checks the exact Lean version and all nine dependency revisions, buil
 
 For individual commands and trust boundaries, read [submission/REPRODUCTION.md](submission/REPRODUCTION.md). The toolchain is Lean **4.34.0** and Mathlib is pinned to **5ed2965256430c3649e86755f9576b54eca72435**.
 
+## Verification status
+
+The clean build, explicit checks, fifteen axiom audits and full-environment kernel replay passed on Windows and private Ubuntu CI. The selected proof commit is `4d44c64d562f1b15cae4c93037d54f064a935873`. [Verification report](verification/report.md) · [Private CI run](https://github.com/Ghuffy1/erdos691/actions/runs/42966106312)
+
 ## Submission materials
 
 The [readiness audit](submission/READINESS.md) records completed checks and outstanding release conditions. The [PR draft](submission/PR_BODY.md) and catalog patch are prepared for the standard GitHub route. They target the existing JSP-000563 entry. Repository ownership, public links, contributor identity, source rights, priority, and the organizers' review must be established at the appropriate submission stage.
