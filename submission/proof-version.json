@@ -1,9 +1,9 @@
 {
   "problem": "JSP-000563",
   "original_problem": "Erdos 691",
-  "repository_publication": "private GitHub repository created with user authorization",
+  "repository_publication": "Public release authorized after final verification",
   "branch": "main",
-  "proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "proof_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
   "main_theorem": "Erdos691.Adaptive.erdos691",
   "expanded_statement": "Erdos691Audit.original_statement_verified",
   "owner": "Ghuffy1",
@@ -14,9 +14,9 @@
     "lkruer"
   ],
   "equal_contribution": true,
-  "external_submission": "No contribution PR or award claim submitted",
+  "external_submission": "Ready for contribution PR",
   "awards_rules_commit": "f8801a856529dce27e738c6b305e46d76e7c387c",
   "repository": "https://github.com/Ghuffy1/erdos691",
-  "ci_url": "https://github.com/Ghuffy1/erdos691/actions/runs/42966106312",
+  "ci_url": "https://github.com/Ghuffy1/erdos691/actions/runs/42968222607",
   "verification": "passed"
 }

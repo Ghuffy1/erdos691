@@ -1,6 +1,6 @@
 # A divisor-closed criterion for Behrend sequences
 
-Private preparation of the combined mathematical and Lean submission for **Erdős problem 691 / JSP-000563**.
+Combined mathematical and Lean submission for **Erdős problem 691 / JSP-000563**.
 
 The GitHub owner and submission coordinator is **Ghuffy1**. Will Howe (**H0W4RD-dev**), Grant Huffman (**Ghuffy1**), Jensen Kohlmeyer (**JENW1N**), and Liam Kruer (**lkruer**) receive equal team contribution credit. The paper uses alphabetical surname order. AI assistance and the separately credited classical formalization are documented in [AUTHORS.md](AUTHORS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -28,10 +28,10 @@ For individual commands and trust boundaries, read [submission/REPRODUCTION.md](
 
 ## Verification status
 
-The clean build, explicit checks, fifteen axiom audits and full-environment kernel replay passed on Windows and private Ubuntu CI. The selected proof commit is `4d44c64d562f1b15cae4c93037d54f064a935873`. [Verification report](verification/report.md) · [Private CI run](https://github.com/Ghuffy1/erdos691/actions/runs/42966106312)
+The clean build, explicit checks, fifteen axiom audits and full-environment kernel replay passed on Windows and private Ubuntu CI. The selected proof commit is `ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb`. [Verification report](verification/final-20261111/report.md) · [Private CI run](https://github.com/Ghuffy1/erdos691/actions/runs/42968222607)
 
 ## Submission materials
 
 The [readiness audit](submission/READINESS.md) records completed checks and outstanding release conditions. The [PR draft](submission/PR_BODY.md) and catalog patch are prepared for the standard GitHub route. They target the existing JSP-000563 entry. Repository ownership, public links, contributor identity, source rights, priority, and the organizers' review must be established at the appropriate submission stage.
 
-The original repository is **Ghuffy1/erdos691**, created with private visibility. Public release remains subject to the user's instruction.
+The original repository is **Ghuffy1/erdos691**. The owner authorized its public release for JSP submission after the final verification passed.

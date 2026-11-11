@@ -1,0 +1,11 @@
+{
+  "catalog": "JSP-000563",
+  "allowed_fields": [
+    "Attribution basis",
+    "Current status",
+    "Lean proof",
+    "Publication details"
+  ],
+  "question_and_other_records_preserved": true,
+  "whitespace_check": "passed"
+}

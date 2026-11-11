@@ -1,4 +1,6 @@
-# Verification report
+# Earlier verification report
+
+The final pre-submission check is recorded in [final-20261111/report.md](final-20261111/report.md). This earlier record describes the preceding checked commits.
 
 **Overall verdict — verification passed for the complete arithmetic criterion.**
 
@@ -79,4 +81,4 @@ The four team contributors receive equal credit, with Ghuffy1 as owner and coord
 
 The full-text comparisons with the identified Hall book sections, Hall's 1990 chapter, and Hill's dissertation remain incomplete. These checks and the related closed PRs are recorded in submission/RELATED_WORK.md. The repository makes no verified first-priority claim. The organizers must complete their mathematical review, contributor and identity checks, and award process. Every claimant personally confirms their own claim.
 
-The repository remains private. This report records completed verification and preserves the user-controlled public-release decision.
+This earlier verification took place while the repository was private. The final report records the subsequent release authorization and checks.

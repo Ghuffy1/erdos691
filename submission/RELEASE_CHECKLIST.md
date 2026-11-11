@@ -22,17 +22,17 @@
 
 - [x] Preserve the upstream file-level Apache 2.0 notice, include the license, and record the adapted source and modifications.
 - [ ] Complete the outstanding Hall and Hill comparisons before asserting first discovery or novelty. The current draft records priority as unestablished.
-- [ ] Confirm the authors' account mapping, equal credit, actual contribution descriptions, and authority for the proposed submission.
+- [x] Record the user-declared authors, account mapping, equal credit and submission authority. The organizers independently verify contribution and identity.
 - [x] Prepare Apache 2.0 for code and CC BY 4.0 for the manuscript and original documentation, subject to the user’s release instruction.
-- [ ] Obtain the user's instruction to release the repository.
+- [x] Receive the user’s instruction to submit after final verification passes.
 - [x] Create the original private repository under Ghuffy1, with the selected proof commit contained in main.
 - [ ] After authorized public release, check every pinned link without privileged access.
 
 ## Contribution PR
 
-- [ ] Refresh the official rules, pilot register, catalog, and related PR searches.
-- [ ] Review the exact catalog diff and the final PR body from Ghuffy1's account.
-- [ ] Resolve draft-only notes and verify that all submitted factual claims have supporting evidence.
+- [x] Refresh the official rules, pilot register, catalog, and related PR searches.
+- [x] Review the exact catalog diff and final PR body for submission from Ghuffy1’s account.
+- [x] Resolve draft-only notes and verify the factual claims against the preserved evidence.
 - [ ] Submit only the relevant catalog update and references to the awards repository.
 - [ ] Complete the organizers' mathematical review and formal reproduction.
 

@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-11-11T05:49:55.012605+00:00",
+  "checked_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
+  "tracked_files": 80,
+  "history_commits": 4,
+  "proof_inputs_unchanged": true,
+  "syntax_checks": "pass",
+  "pdf_integrity": "pass",
+  "prior_verification_evidence_integrity": "pass",
+  "all_history_private_material_scan": "pass",
+  "source_review": "Both implications and all-A arithmetic specification rechecked against the manuscript and expanded Lean statement.",
+  "fresh_ci_run": 42968222607,
+  "fresh_ci_status": "running"
+}

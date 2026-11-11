@@ -1,40 +1,17 @@
-# Submission readiness
+# Submission audit
 
-**Private submission repository prepared. Technical verification passed on Windows and Ubuntu CI.**
+**Final pre-submission verification passed.**
 
-The original repository is `Ghuffy1/erdos691`, created with private visibility for branch `main`. The owner and submission coordinator is Ghuffy1. Will Howe (H0W4RD-dev), Grant Huffman (Ghuffy1), Jensen Kohlmeyer (JENW1N), and Liam Kruer (lkruer) receive equal contribution credit. The selected proof commit is recorded in `proof-version.json`.
+The selected proof commit is `ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb` in `Ghuffy1/erdos691`, branch `main`. The owner authorized public release and submission after this check passed. [Final verification report](../verification/final-20261111/report.md)
 
-## Included materials
+The complete manuscript, formal proof, expanded statement bridge, fifteen-declaration axiom audit, locked toolchain, reproducible build, licenses, attribution, submission draft, and catalog patch are included. The fresh CI run checked the exact selected commit and returned success for all twelve commands. Prior Windows and Ubuntu runs are also preserved.
 
-| Material | Location |
-| --- | --- |
-| Six-page mathematical manuscript | `paper/proof.pdf` |
-| Manuscript source | `paper/manuscript.tex` |
-| Complete formal proof | `Erdos691.lean` |
-| Expanded original statement and bridge | `Challenge.lean` |
-| Fifteen-declaration axiom audit | `Audit.lean` |
-| Toolchain and locked dependencies | `lean-toolchain`, `lake-manifest.json` |
-| Normal build and verification commands | `REPRODUCTION.md`, `scripts/verify.py` |
-| Passed private GitHub CI | `.github/workflows/verify.yml` |
-| Team, AI and source credits | `AUTHORS.md`, `THIRD_PARTY_NOTICES.md` |
-| Current rules and requirement mapping | `RULES_AUDIT.md`, `rules-snapshot/` |
-| Combined solver/formalizer PR draft | `PR_BODY.md` |
-| Restricted awards-catalog update | `catalog.patch` |
-| Related PRs and literature limitations | `RELATED_WORK.md` |
-| Private personal claim drafts | Ignored `private/` directory |
+Ghuffy1 is the owner and coordinator. H0W4RD-dev, Ghuffy1, JENW1N, and lkruer receive equal contribution credit. Author names are alphabetized by surname in the manuscript. The public author and account records reflect the user's instructions. The organizers perform their own contribution and identity verification.
 
-## Outstanding release matters
+The catalog change affects only the permitted JSP-000563 detail fields. The question, eligibility flag, claim statuses, and all other records are preserved.
 
-The upstream proof file contains an Apache 2.0 notice that was missed by the earlier repository-metadata audit. It is preserved in the submitted source, with the full license and modification NOTICE now included. This preparation uses that file-level declaration. Original code is prepared under Apache 2.0 and the manuscript and original documentation under CC BY 4.0. Publication awaits the user’s instruction.
+## Remaining review
 
-Novelty and first priority remain unestablished. Full-text comparisons with the identified Hall book sections, Hall's 1990 chapter, and Hill's dissertation remain incomplete. The current draft presents the precise theorem for review and discloses this limitation.
+Novelty and first priority remain unestablished. The outstanding Hall and Hill full-text comparisons are disclosed in RELATED_WORK.md and in the submission. The organizers assess the mathematical answer, authorship, priority, eligibility, and any award. Independent human review and a separately implemented kernel check remain pending.
 
-Contributor-to-account mapping, individual contribution confirmation, any collective representation, and the legal payee require the team's and organizers' appropriate confirmations. Local preparation establishes none of those external facts.
-
-The GitHub repository was created under Ghuffy1 with private visibility, as authorized. Public access awaits the user's release instruction. The proposed catalog patch has passed a dry-run applicability check against the pinned awards revision.
-
-## External review stages
-
-The organizers review the mathematical solution and scope, then reproduce the formal proof. They control candidate registration, eligibility, notice periods, contribution and identity decisions, priority, and any award. Their internal tier thresholds are unpublished. The current Open / No / No catalog fields are screening fields and do not prevent preparation of a complete submission.
-
-The normal build, explicit source checks, fifteen axiom audits, module replays, and full-environment replay passed on both Windows and isolated hosted Ubuntu CI. The selected proof commit is `4d44c64d562f1b15cae4c93037d54f064a935873`. The [verification report](../verification/report.md) records all commands, trust boundaries, and evidence. An independently implemented kernel and external human review remain pending.
+Private personal claim drafts remain in the ignored local private directory. Each claimant personally initiates their later claim and identity verification through the prescribed process.

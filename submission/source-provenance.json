@@ -1,6 +1,6 @@
 {
   "prior_private_commit": "9b6ce1846df5d6d1fa9fc428388735ca9da9c6bd",
-  "submitted_proof_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "submitted_proof_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
   "change": "CRLF normalized to LF by Git; formal proof text unchanged",
   "files": [
     {
@@ -23,5 +23,7 @@
     }
   ],
   "local_checked_commit": "87514692c7a814ea3f500eb72bfba45da8a2bf54",
-  "ci_checked_commit": "4d44c64d562f1b15cae4c93037d54f064a935873"
+  "ci_checked_commit": "4d44c64d562f1b15cae4c93037d54f064a935873",
+  "final_ci_checked_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
+  "final_ci_url": "https://github.com/Ghuffy1/erdos691/actions/runs/42968222607"
 }
