@@ -1,7 +1,7 @@
 {
   "problem": "JSP-000563",
   "original_problem": "Erdos 691",
-  "repository_publication": "Public release authorized after final verification",
+  "repository_publication": "Public for JSP contribution review",
   "branch": "main",
   "proof_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
   "main_theorem": "Erdos691.Adaptive.erdos691",
@@ -14,9 +14,10 @@
     "lkruer"
   ],
   "equal_contribution": true,
-  "external_submission": "Ready for contribution PR",
+  "external_submission": "PR #5562 open",
   "awards_rules_commit": "f8801a856529dce27e738c6b305e46d76e7c387c",
   "repository": "https://github.com/Ghuffy1/erdos691",
   "ci_url": "https://github.com/Ghuffy1/erdos691/actions/runs/42968222607",
-  "verification": "passed"
+  "verification": "passed",
+  "submission_url": "https://github.com/TheJustinSunPrize/awards/pull/5562"
 }

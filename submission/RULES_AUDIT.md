@@ -4,7 +4,7 @@ Reviewed November 11, 2026. The awards repository is pinned to `f8801a856529dce2
 
 ## Applicable route
 
-JSP-000563 is outside the 50-problem MathDB pilot. Its applicable route is the standard contribution PR to TheJustinSunPrize/awards. The original proof belongs in the submitting account's external repository. Only catalog text and proof references belong in the awards PR. The prepared local repository is intended for `Ghuffy1/erdos691`. Its remote has yet to be created. [Contribution rules](https://github.com/TheJustinSunPrize/awards/blob/f8801a856529dce27e738c6b305e46d76e7c387c/CONTRIBUTING.md)
+JSP-000563 is outside the 50-problem MathDB pilot. Its applicable route is the standard contribution PR to TheJustinSunPrize/awards. The original proof belongs in the submitting account's external repository. Only catalog text and proof references belong in the awards PR. The original proof repository is `Ghuffy1/erdos691`, owned by Ghuffy1 and released publicly after final verification. The contribution was submitted in PR #5562. [Contribution rules](https://github.com/TheJustinSunPrize/awards/blob/f8801a856529dce27e738c6b305e46d76e7c387c/CONTRIBUTING.md)
 
 ## Requirement mapping
 
@@ -24,7 +24,7 @@ JSP-000563 is outside the 50-problem MathDB pilot. Its applicable route is the s
 | Respect third-party rights | Embedded Apache 2.0 source notice preserved, full license and modification NOTICE included. The file-level declaration is the recorded licensing basis. |
 | Check overlapping submissions | `RELATED_WORK.md` records the searches and four related closed PRs, with the limits of the inspection. |
 | Permitted awards changes | `catalog.patch` updates only the relevant detail entry's status, proof, attribution, and publication fields. Index, eligibility, claim states, and award records are maintained by the organizers. |
-| Public proof evidence | Prepared manuscript and source links become public only after a user-authorized release. Draft links identify their intended destination. |
+| Public proof evidence | Manuscript and source links are public following the user-authorized release and have been checked without authentication. |
 | No private identity or payment materials in public files | Claim working materials are kept in the ignored `private/` directory. The manuscript retains only the author emails explicitly requested for the paper. |
 | Personal claims | Each claimant personally submits and confirms their own claim. Four private drafts are supplied. |
 | Identity verification | Each applicant follows the current repository's email-verification instructions after a claim. Identity verification has not occurred. |

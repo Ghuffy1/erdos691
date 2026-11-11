@@ -1,6 +1,6 @@
 # Related submissions and priority status
 
-The public awards repository and GitHub issues/PR search were checked on November 11, 2026 for JSP-000563, Erdős 691, Behrend, and multiples. Open and closed results were included. Raw responses remain in the private preparation evidence. All four directly related PRs below are closed and unmerged. A public search has indexing and availability limits.
+The public awards repository and GitHub issues/PR search were checked on November 11, 2026 for JSP-000563, Erdős 691, Behrend, and multiples. Open and closed results were included. Raw responses remain in the private preparation evidence. All four prior related PRs below are closed and unmerged. The team’s subsequent contribution is [PR #5562](https://github.com/TheJustinSunPrize/awards/pull/5562). A public search has indexing and availability limits.
 
 - PR 3697 proposed recording formalization evidence. Its author closed it as a duplicate. [PR 3697](https://github.com/TheJustinSunPrize/awards/pull/3697)
 - PR 3795 identifies its supplied results as scoped components. The pinned file contains small-prime and numerical calculations. Those declarations do not establish the universal density criterion. [PR 3795](https://github.com/TheJustinSunPrize/awards/pull/3795), [Pinned source](https://github.com/dcdreamy-code/awards/blob/e16a8b83b0e94982fea035d372d74291ed005ea9/submissions/JSP-000563/Erdos563.lean)

@@ -21,6 +21,7 @@
     "Contributor identity and personal claim confirmation pending",
     "Independent kernel implementation not used"
   ],
-  "privacy": "Public release authorized for JSP submission after final verification",
-  "final_evidence_commit": "32a44b30caae0f6d664bc38ea974a68bad7debac"
+  "privacy": "Public repository released with user authorization for JSP submission",
+  "final_evidence_commit": "32a44b30caae0f6d664bc38ea974a68bad7debac",
+  "submission_url": "https://github.com/TheJustinSunPrize/awards/pull/5562"
 }

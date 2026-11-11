@@ -1,0 +1,25 @@
+{
+  "submitted_utc": "2026-11-11T06:03:27Z",
+  "checked_utc": "2026-11-11T06:04:05.593869+00:00",
+  "pr_url": "https://github.com/TheJustinSunPrize/awards/pull/5562",
+  "pr_number": 5562,
+  "pr_state": "open",
+  "pr_author": "Ghuffy1",
+  "base_repository": "TheJustinSunPrize/awards",
+  "base_branch": "main",
+  "base_commit": "f8801a856529dce27e738c6b305e46d76e7c387c",
+  "head_repository": "Ghuffy1/awards",
+  "head_branch": "jsp-000563-erdos691-20261111",
+  "head_commit": "9969b2abf339586344a937277da1d210e76216de",
+  "changed_files": [
+    "problems/catalog-0501-0600.md"
+  ],
+  "proof_repository": "https://github.com/Ghuffy1/erdos691",
+  "proof_commit": "ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb",
+  "evidence_commit": "32a44b30caae0f6d664bc38ea974a68bad7debac",
+  "verification_run": "https://github.com/Ghuffy1/erdos691/actions/runs/42968222607",
+  "verification_conclusion": "success",
+  "review_status": "Awaiting JSP review",
+  "priority": "unestablished",
+  "award_claim": "Contribution submission stage"
+}

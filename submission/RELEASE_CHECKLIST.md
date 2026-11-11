@@ -26,14 +26,14 @@
 - [x] Prepare Apache 2.0 for code and CC BY 4.0 for the manuscript and original documentation, subject to the user’s release instruction.
 - [x] Receive the user’s instruction to submit after final verification passes.
 - [x] Create the original private repository under Ghuffy1, with the selected proof commit contained in main.
-- [ ] After authorized public release, check every pinned link without privileged access.
+- [x] After authorized public release, check every pinned link without privileged access.
 
 ## Contribution PR
 
 - [x] Refresh the official rules, pilot register, catalog, and related PR searches.
 - [x] Review the exact catalog diff and final PR body for submission from Ghuffy1’s account.
 - [x] Resolve draft-only notes and verify the factual claims against the preserved evidence.
-- [ ] Submit only the relevant catalog update and references to the awards repository.
+- [x] Submit only the relevant catalog update and references to the awards repository in PR #5562.
 - [ ] Complete the organizers' mathematical review and formal reproduction.
 
 ## Later claim stage

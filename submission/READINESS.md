@@ -1,6 +1,8 @@
 # Submission audit
 
-**Final pre-submission verification passed.**
+**Final verification passed. Submitted for JSP review.**
+
+[Contribution PR #5562](https://github.com/TheJustinSunPrize/awards/pull/5562) is open from Ghuffy1. The proof repository is public and the pinned source and manuscript links were checked without authentication.
 
 The selected proof commit is `ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb` in `Ghuffy1/erdos691`, branch `main`. The owner authorized public release and submission after this check passed. [Final verification report](../verification/final-20261111/report.md)
 

@@ -4,6 +4,8 @@ Combined mathematical and Lean submission for **Erdős problem 691 / JSP-000563*
 
 The GitHub owner and submission coordinator is **Ghuffy1**. Will Howe (**H0W4RD-dev**), Grant Huffman (**Ghuffy1**), Jensen Kohlmeyer (**JENW1N**), and Liam Kruer (**lkruer**) receive equal team contribution credit. The paper uses alphabetical surname order. AI assistance and the separately credited classical formalization are documented in [AUTHORS.md](AUTHORS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
+Submitted for review in [JSP PR #5562](https://github.com/TheJustinSunPrize/awards/pull/5562). Ghuffy1 owns the public proof repository and submitted the contribution. The four team members receive equal credit.
+
 ## Mathematical result
 
 For every set of positive integers A, its positive multiples have ordinary natural density one if and only if A meets every admissible family of finite divisor-closed prime-block sets. The admissibility conditions involve finite arithmetic and are independent of A.
@@ -34,4 +36,4 @@ The clean build, explicit checks, fifteen axiom audits and full-environment kern
 
 The [readiness audit](submission/READINESS.md) records completed checks and outstanding release conditions. The [PR draft](submission/PR_BODY.md) and catalog patch are prepared for the standard GitHub route. They target the existing JSP-000563 entry. Repository ownership, public links, contributor identity, source rights, priority, and the organizers' review must be established at the appropriate submission stage.
 
-The original repository is **Ghuffy1/erdos691**. The owner authorized its public release for JSP submission after the final verification passed.
+The original repository is **Ghuffy1/erdos691**. It was released publicly for JSP submission after the final verification passed.

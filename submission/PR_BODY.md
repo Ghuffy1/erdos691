@@ -17,7 +17,7 @@ This combined submission presents a complete arithmetic criterion for the densit
 
 - The complete mathematical solution is supplied by the manuscript linked above.
 - Mathematical review is requested. Organizer acceptance and external human review are pending.
-- The statement is proposed for review against the original open-ended question. It has no claimed prior maintainer approval.
+- The statement is proposed for review against the original open-ended question and awaits maintainer approval.
 - The target is `Erdos691.Adaptive.erdos691 (A : Set ℕ)`, proving `HasMultiplesDensityOne A ↔ MeetsEveryTest A`. [Statement and proof](https://github.com/Ghuffy1/erdos691/blob/ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb/Erdos691.lean#L5748)
 - The expanded bridge is `Erdos691Audit.original_statement_verified`. [Expanded statement](https://github.com/Ghuffy1/erdos691/blob/ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb/Challenge.lean)
 - A is arbitrary. Multiples and divisors are positive. Density is ordinary natural density. The test class is independent of A and imposes finite divisor-closed levels, root {1}, increasing prime cutoffs, projection compatibility, and the prescribed reciprocal-mass bound for every parent. Both implications and all boundary cases are covered. [Correspondence](https://github.com/Ghuffy1/erdos691/blob/ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb/submission/SCOPE.md)
@@ -67,7 +67,7 @@ The original question, both directions, boundary cases, arithmetic fibers and A-
 - The same team receives equal credit for its formalization contribution. **Ghuffy1** is the repository owner and submission coordinator. Account-to-person attribution is supplied by the team and awaits the organizers' independent confirmation.
 - OpenAI AI tools assisted mathematical exploration, checking, formalization, and manuscript and submission preparation. Agent-generated local commits are labeled accordingly.
 - The classical Davenport–Erdős Lean dependency is adapted from **yuta0x89/ErdosProblems**, commit `1aa94199fd3874e25b2126a0ff153e144e3e9c04`. Its mathematical authors and formal source remain separately credited. Its embedded Apache 2.0 declaration is preserved, and the full license and modification NOTICE are included. [Source credit](https://github.com/Ghuffy1/erdos691/blob/ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb/THIRD_PARTY_NOTICES.md)
-- No external independent human verifier is claimed. Internal mathematical review and formal checks are described at their actual level.
+- External independent human review remains pending. Internal mathematical review and formal checks are described at their actual level.
 - The manuscript and [authorship record](https://github.com/Ghuffy1/erdos691/blob/ae09eff8eada7ed7df222e5da6b5e0e3e36a75cb/AUTHORS.md) document the proposed credits. Novelty and first priority remain unestablished pending full-text comparisons with Hall and Hill and external review.
 
 ## Submission checklist
@@ -78,4 +78,4 @@ The original question, both directions, boundary cases, arithmetic fibers and A-
 - [x] Ghuffy1 submits the team's contribution from its original repository. The selected commit is on main, with statement correspondence, reproduction commands and axiom results supplied.
 - [x] The PR contains only catalog text and public evidence references. Private identity, payment and personal claim materials remain outside it.
 
-The four equal contributors are credited in full above and in the manuscript. The catalog follows the repository's abbreviated display convention. No verified first-priority claim is made. The outstanding literature comparisons and external review are explicitly disclosed.
+The four equal contributors are credited in full above and in the manuscript. The catalog follows the repository's abbreviated display convention. First priority remains unestablished. The outstanding literature comparisons and external review are explicitly disclosed.
